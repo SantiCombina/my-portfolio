@@ -51,7 +51,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, and Pa
 
 ## 🌐 Live Demo
 
-[View Portfolio](https://santicombina.com) (Replace with actual URL)
+- **Portfolio**: [https://santicombina.dev](https://santicombina.vercel.app/)
 
 ## 🚦 Getting Started
 
@@ -83,7 +83,6 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, and Pa
    ```env
    PAYLOAD_SECRET=your-secret-key
    DATABASE_URI=your-postgresql-connection-string
-   NEXT_PUBLIC_SERVER_URL=http://localhost:3000
    ```
 
 4. **Start development server**
