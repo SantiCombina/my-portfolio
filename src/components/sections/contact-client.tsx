@@ -1,45 +1,15 @@
 'use client';
 
-import { Github, Linkedin, Mail, MapPin, Send } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
-import { useState } from 'react';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Title } from '@/components/ui/title';
 import { useLanguage } from '@/contexts/language-context';
 
+import EmailForm from '../email-form';
+
 export function ContactClient() {
-  const { t, language } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
-
-    // You can integrate with a form service like Formspree, EmailJS, etc.
-    alert(t.contact.form.success);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  const { t } = useLanguage();
 
   const contactInfo = [
     {
@@ -102,71 +72,7 @@ export function ContactClient() {
             viewport={{ once: true }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600/8 to-pink-600/8 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
-            <form
-              onSubmit={handleSubmit}
-              className="relative bg-gray-900/40 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-500 h-full flex flex-col"
-            >
-              <h3 className="text-2xl font-semibold mb-6 text-gray-100">
-                {language === 'en' ? 'Send me a message' : 'Envíame un mensaje'}
-              </h3>
-
-              <div className="space-y-6 flex-1">
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">{t.contact.form.name}</label>
-                  <Input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="bg-gray-800/50 border-gray-600 text-gray-100 placeholder-gray-400 focus-visible:ring-purple-500 focus-visible:border-purple-500"
-                    placeholder={t.contact.form.placeholder.name}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">{t.contact.form.email}</label>
-                  <Input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="bg-gray-800/50 border-gray-600 text-gray-100 placeholder-gray-400 focus-visible:ring-purple-500 focus-visible:border-purple-500"
-                    placeholder={t.contact.form.placeholder.email}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">{t.contact.form.message}</label>
-                  <Textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="bg-gray-800/50 border-gray-600 text-gray-100 placeholder-gray-400 focus-visible:ring-purple-500 focus-visible:border-purple-500 resize-none"
-                    placeholder={t.contact.form.placeholder.message}
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 disabled:opacity-50"
-                  size="lg"
-                >
-                  {isSubmitting ? (
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  ) : (
-                    <>
-                      <Send size={18} />
-                      {t.contact.form.send}
-                    </>
-                  )}
-                </Button>
-              </div>
-            </form>
+            <EmailForm />
           </motion.div>
 
           <motion.div
@@ -190,7 +96,6 @@ export function ContactClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
                     viewport={{ once: true }}
-                    whileHover={{ scale: contact.id === 'location' ? 1 : 1.02 }}
                   >
                     <div
                       className={`absolute inset-0 bg-gradient-to-r ${contact.color} opacity-0 group-hover:opacity-20 rounded-xl blur-lg transition-all duration-500`}

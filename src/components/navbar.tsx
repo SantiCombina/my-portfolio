@@ -38,7 +38,7 @@ export function Navbar() {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 z-50 flex items-center justify-center w-full h-16 px-6 sm:px-9 transition-all duration-500 ${
+        className={`fixed top-0 z-50 flex items-center justify-center w-full h-16 transition-all duration-500 ${
           isScrolled ? 'bg-gray-950/85 backdrop-blur-xl shadow-lg shadow-purple-500/5' : 'bg-transparent'
         }`}
         initial={{ y: -100 }}

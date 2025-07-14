@@ -28,7 +28,7 @@ export function Header() {
         }}
       >
         <motion.h1
-          className="font-bold lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] md:leading-[60px] text-center leading-[45px]"
+          className="font-bold lg:text-[70px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] md:leading-[60px] text-center leading-[45px]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
@@ -39,9 +39,9 @@ export function Header() {
           </span>
         </motion.h1>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 px-4 sm:px-6">
           <motion.p
-            className="text-[#DFD9FF] max-w-[550px] lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center break-words"
+            className="text-[#DFD9FF] max-w-[550px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center text-wrap"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -50,7 +50,7 @@ export function Header() {
           </motion.p>
 
           <motion.a
-            className="group relative flex px-6 py-2 transition-all duration-300 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl hover:from-purple-700 hover:to-pink-700 hover:scale-105 active:scale-100 shadow-lg hover:shadow-purple-500/25"
+            className="group relative flex px-5 py-1.5 transition-all duration-300 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl hover:from-purple-700 hover:to-pink-700 hover:scale-105 active:scale-100 shadow-lg hover:shadow-purple-500/25"
             href={t.hero.resumeUrl}
             rel="noopener noreferrer"
             target="_blank"
@@ -60,9 +60,9 @@ export function Header() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="flex items-center gap-2 font-semibold">
+            <span className="flex items-center gap-2 text-sm font-semibold">
               {t.hero.resume}
-              <FileDown className="w-5 h-5 group-hover:animate-bounce" />
+              <FileDown className="w-4 h-4 group-hover:animate-bounce" />
             </span>
           </motion.a>
         </div>

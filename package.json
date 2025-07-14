@@ -15,6 +15,7 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@hookform/resolvers": "^5.1.1",
     "@payloadcms/db-postgres": "3.46.0",
     "@payloadcms/next": "3.46.0",
@@ -35,10 +36,12 @@
     "lucide-react": "^0.525.0",
     "motion": "^12.23.3",
     "next": "15.3.2",
+    "next-themes": "^0.4.6",
     "payload": "3.46.0",
     "react": "19.1.0",
     "react-hook-form": "^7.60.0",
     "sharp": "0.34.2",
+    "sonner": "^2.0.6",
     "tailwind-merge": "^3.3.1",
     "zod": "^4.0.5"
   },

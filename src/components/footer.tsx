@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
 
 export function Footer() {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   const socialLinks = [
     {
@@ -46,9 +46,7 @@ export function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="text-xl font-bold text-white mb-2">Santiago Combina</h3>
-            <p className="text-gray-400 text-sm">
-              {language === 'en' ? 'Full Stack Developer' : 'Desarrollador Full Stack'}
-            </p>
+            <p className="text-gray-400 text-sm">{t.footer.role}</p>
           </motion.div>
 
           <motion.div
@@ -69,7 +67,7 @@ export function Footer() {
                   className={`p-3 rounded-full bg-gray-800/50 border border-gray-700/50 text-gray-400 transition-all duration-200 ${link.color} hover:border-purple-500/50 hover:bg-gray-700/50`}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.1 }}
                 >
                   <Icon size={20} />
                 </motion.a>

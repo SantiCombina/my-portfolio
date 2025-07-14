@@ -15,8 +15,12 @@ interface ProjectsClientProps {
 export function ProjectsClient({ projects }: ProjectsClientProps) {
   const { t, language } = useLanguage();
 
-  // Debug: Log projects data
-  console.log('Projects data:', projects);
+  const getLocalizedText = (project: Project, field: 'name' | 'description') => {
+    if (field === 'name') {
+      return language === 'es' ? project.nameES : project.nameEN;
+    }
+    return language === 'es' ? project.descriptionES : project.descriptionEN;
+  };
 
   if (!projects || projects.length === 0) {
     return (
@@ -32,7 +36,7 @@ export function ProjectsClient({ projects }: ProjectsClientProps) {
             <Title h2={t.projects.title} h3={t.projects.subtitle} />
           </motion.div>
           <div className="text-center text-gray-400">
-            <p>No projects available at the moment.</p>
+            <p>{t.projects.no_projects}</p>
           </div>
         </div>
       </section>
@@ -58,15 +62,8 @@ export function ProjectsClient({ projects }: ProjectsClientProps) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto justify-items-center">
           {projects.map((project, index) => {
             const imageUrl = typeof project.image === 'object' && project.image ? project.image.url || '' : '';
-            const projectName = language === 'es' ? project.nameES : project.nameEN;
-            const projectDescription = language === 'es' ? project.descriptionES : project.descriptionEN;
-
-            console.log('Processing project:', {
-              id: project.id,
-              name: projectName,
-              image: imageUrl,
-              deploy: project.deploy,
-            });
+            const projectName = getLocalizedText(project, 'name');
+            const projectDescription = getLocalizedText(project, 'description');
 
             return (
               <motion.div

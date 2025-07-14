@@ -2,7 +2,9 @@ import { Montserrat } from 'next/font/google';
 import React from 'react';
 
 import { LenisProvider } from '@/components/lenis-provider';
+import { Toaster } from '@/components/ui/sonner';
 import { LanguageProvider } from '@/contexts/language-context';
+
 import '@/styles/globals.css';
 
 const montserrat = Montserrat({
@@ -75,6 +77,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <LanguageProvider>
           <LenisProvider>
             <main>{children}</main>
+            <Toaster richColors position="top-center" duration={7000} />
           </LenisProvider>
         </LanguageProvider>
       </body>

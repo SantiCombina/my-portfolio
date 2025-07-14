@@ -15,7 +15,7 @@ export function Title({ h2, h3 }: Props) {
       whileInView={{ y: 0, opacity: 1 }}
     >
       <motion.h3
-        className="text-lg font-medium text-purple-400 mb-2 tracking-wider uppercase"
+        className="text-lg font-medium text-purple-400 mb-1 tracking-wider uppercase"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
