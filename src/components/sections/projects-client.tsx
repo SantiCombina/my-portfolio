@@ -61,7 +61,7 @@ export function ProjectsClient({ projects }: ProjectsClientProps) {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto justify-items-center">
           {projects.map((project, index) => {
-            const imageUrl = typeof project.image === 'object' && project.image ? project.image.url || '' : '';
+            const imageUrl = typeof project.image === 'object' && project.image ? project.image.publicUrl || '' : '';
             const projectName = getLocalizedText(project, 'name');
             const projectDescription = getLocalizedText(project, 'description');
 

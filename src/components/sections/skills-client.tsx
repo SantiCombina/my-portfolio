@@ -33,7 +33,7 @@ export function SkillsClient({ skills }: SkillsClientProps) {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {skills.map((skill, index) => {
-            const imageUrl = typeof skill.image === 'object' && skill.image ? skill.image.url || '' : '';
+            const imageUrl = typeof skill.image === 'object' && skill.image ? skill.image.publicUrl || '' : '';
             return (
               <motion.div
                 key={skill.id}

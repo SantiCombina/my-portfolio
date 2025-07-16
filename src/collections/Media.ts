@@ -11,6 +11,21 @@ export const Media: CollectionConfig = {
       type: 'text',
       required: true,
     },
+    {
+      name: 'publicUrl',
+      type: 'text',
+      admin: { readOnly: true },
+      hooks: {
+        beforeChange: [
+          ({ siblingData }) => {
+            if (siblingData && siblingData._key) {
+              return `https://fcpy168ehw.ufs.sh/f/${siblingData._key}`;
+            }
+            return undefined;
+          },
+        ],
+      },
+    },
   ],
   upload: true,
 };

@@ -65,5 +65,6 @@ export const Projects: CollectionConfig = {
       },
     },
   ],
+
   defaultSort: 'order',
 };
