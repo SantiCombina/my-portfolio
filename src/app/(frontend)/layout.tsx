@@ -66,13 +66,6 @@ export const metadata = {
   },
 };
 
-export const themeColor = '#8B5CF6';
-
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-};
-
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props;
 
