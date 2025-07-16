@@ -1,10 +1,11 @@
-// storage-adapter-import-placeholder
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 import { postgresAdapter } from '@payloadcms/db-postgres';
-import { payloadCloudPlugin } from '@payloadcms/payload-cloud';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import { uploadthingStorage } from '@payloadcms/storage-uploadthing';
+import { en } from '@payloadcms/translations/languages/en';
+import { es } from '@payloadcms/translations/languages/es';
 import { buildConfig } from 'payload';
 import sharp from 'sharp';
 
@@ -24,6 +25,10 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Skills, Projects],
+  i18n: {
+    fallbackLanguage: 'es',
+    supportedLanguages: { es, en },
+  },
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -36,7 +41,14 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
-    payloadCloudPlugin(),
-    // storage-adapter-placeholder
+    uploadthingStorage({
+      collections: {
+        media: true,
+      },
+      options: {
+        token: process.env.UPLOADTHING_TOKEN,
+        acl: 'public-read',
+      },
+    }),
   ],
 });

@@ -9,7 +9,6 @@ const CACHE_TAGS = {
   PROJECTS: 'projects',
 } as const;
 
-// Cache the projects for 5 minutes
 const getCachedProjects = unstable_cache(
   async () => {
     const payload = await getPayload({
@@ -27,7 +26,7 @@ const getCachedProjects = unstable_cache(
   },
   ['projects-list'],
   {
-    revalidate: 300, // 5 minutes
+    revalidate: 300,
     tags: [CACHE_TAGS.PROJECTS],
   },
 );

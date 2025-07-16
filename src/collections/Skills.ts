@@ -17,11 +17,11 @@ export const Skills: CollectionConfig = {
     },
     {
       name: 'image',
-      type: 'upload',
+      type: 'relationship',
       relationTo: 'media',
-      required: true,
+      required: false,
       admin: {
-        description: 'Icon/image for the skill',
+        description: 'Image representing the skill',
       },
     },
     {

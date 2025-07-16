@@ -148,6 +148,7 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
+  _key?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -171,9 +172,9 @@ export interface Skill {
    */
   name: string;
   /**
-   * Icon/image for the skill
+   * Image representing the skill
    */
-  image: number | Media;
+  image?: (number | null) | Media;
   /**
    * Order in which the skill should appear
    */
@@ -204,9 +205,9 @@ export interface Project {
    */
   descriptionES: string;
   /**
-   * Project screenshot/image
+   * Image representing the project
    */
-  image: number | Media;
+  image?: (number | null) | Media;
   /**
    * Live demo URL
    */
@@ -311,6 +312,7 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  _key?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

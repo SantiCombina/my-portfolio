@@ -17,11 +17,13 @@ export function SkillCard({ image, name }: Props) {
           whileHover={{ rotate: [0, -10, 10, 0] }}
           transition={{ duration: 0.5 }}
         >
-          <img
-            alt={`${name} technology logo`}
-            className="w-8 h-8 md:w-12 md:h-12 filter group-hover:brightness-110 transition-all duration-500"
-            src={image}
-          />
+          {image && (
+            <img
+              alt={`${name} technology logo`}
+              className="w-8 h-8 md:w-12 md:h-12 filter group-hover:brightness-110 transition-all duration-500"
+              src={image}
+            />
+          )}
 
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </motion.div>

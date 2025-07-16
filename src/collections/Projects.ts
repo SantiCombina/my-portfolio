@@ -41,11 +41,11 @@ export const Projects: CollectionConfig = {
     },
     {
       name: 'image',
-      type: 'upload',
+      type: 'relationship',
       relationTo: 'media',
-      required: true,
+      required: false,
       admin: {
-        description: 'Project screenshot/image',
+        description: 'Image representing the project',
       },
     },
     {

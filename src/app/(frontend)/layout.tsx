@@ -36,6 +36,7 @@ export const metadata = {
   creator: 'Santiago Combina',
   publisher: 'Santiago Combina',
   robots: 'index, follow',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL || 'http://localhost:3000'),
   openGraph: {
     title: 'Santiago Combina - Full Stack Developer',
     description: 'Full Stack Developer specializing in React, Next.js, and modern web technologies.',
@@ -63,9 +64,13 @@ export const metadata = {
     shortcut: '/blue-code.png',
     apple: '/blue-code.png',
   },
-  manifest: '/manifest.json',
-  viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#8B5CF6',
+};
+
+export const themeColor = '#8B5CF6';
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default async function RootLayout(props: { children: React.ReactNode }) {

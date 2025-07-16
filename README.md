@@ -83,6 +83,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, and Pa
    ```env
    PAYLOAD_SECRET=your-secret-key
    DATABASE_URI=your-postgresql-connection-string
+   UPLOADTHING_TOKEN=your-uploadthing-token
    ```
 
 4. **Start development server**
@@ -138,6 +139,10 @@ The portfolio supports both English and Spanish:
 - **Core Web Vitals**: Optimized for excellent user experience
 - **Image Optimization**: Next.js automatic image optimization
 - **Code Splitting**: Automatic code splitting for faster loads
+
+## 📦 Media Storage: Uploadthing
+
+Este proyecto utiliza [Uploadthing](https://uploadthing.com/) como solución de almacenamiento para archivos multimedia en Payload CMS.
 
 ## 📞 Contact
 

@@ -23,11 +23,13 @@ export function ProjectCard({ image, name, description, deploy }: Props) {
           target="_blank"
         >
           <div className="relative overflow-hidden">
-            <img
-              alt={`${name} project screenshot`}
-              className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-              src={image}
-            />
+            {image && (
+              <img
+                alt={`${name} project screenshot`}
+                className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                src={image}
+              />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             <motion.div
               className="absolute top-3 right-3 p-2 bg-black/20 backdrop-blur-sm rounded-full border border-white/10"
