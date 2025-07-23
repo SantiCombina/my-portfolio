@@ -11,8 +11,7 @@ export const translations = {
       greeting: "Hi, I'm",
       description: 'I develop landing pages, user interfaces and web applications',
       resume: 'Resume',
-      resumeUrl:
-        'https://o365sanfranciscoutneduar-my.sharepoint.com/:b:/g/personal/scombina_facultad_sanfrancisco_utn_edu_ar/ERI0MjlrTgJGk15jsbA5hW8BPi_rsVBCK4ZFyfA1p_2_jg?e=YkaArB',
+      resumeUrl: 'https://drive.google.com/file/d/1RdAWhIXbefNe9k1YYZwjMZW5gb2aUbBl/view?usp=sharing',
     },
     skills: {
       title: 'My skills',
@@ -73,8 +72,7 @@ export const translations = {
       greeting: 'Hola, soy',
       description: 'Desarrollo landing pages, interfaces de usuario y aplicaciones web',
       resume: 'Currículum',
-      resumeUrl:
-        'https://o365sanfranciscoutneduar-my.sharepoint.com/:b:/g/personal/scombina_facultad_sanfrancisco_utn_edu_ar/EW8FPVcfeu5Cq4iePIy9OkgBkwDEmV_3JGFun1SIDznnTw?e=wnELm8',
+      resumeUrl: 'https://drive.google.com/file/d/102nqSAMTm9U5hdm8E_7TXmnhBsgY4DED/view?usp=sharing',
     },
     skills: {
       title: 'Mis habilidades',

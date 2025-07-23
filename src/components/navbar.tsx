@@ -45,16 +45,18 @@ export function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="flex items-center justify-between w-full container">
+        <div className="flex items-center justify-between gap-2 w-full container">
           <motion.div
-            className="flex gap-1 text-lg font-bold items-center cursor-pointer group"
+            className="flex gap-1 text-lg font-bold items-center cursor-pointer group whitespace-nowrap"
             onClick={() => scrollToSection('home')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-white group-hover:text-purple-300 transition-colors">Santiago Combina</span>
-            <span className="text-sm md:text-lg text-gray-400 group-hover:text-purple-400 transition-colors">
-              | {t.navbar_logo}
+            <span className="text-white group-hover:text-purple-300 transition-colors">
+              Santiago Combina
+              <span className="inline-block align-middle px-1 text-xs md:text-base text-gray-400 group-hover:text-purple-400 whitespace-nowrap">
+                | {t.navbar_logo}
+              </span>
             </span>
           </motion.div>
 

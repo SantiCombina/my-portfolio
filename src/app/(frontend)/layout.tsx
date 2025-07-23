@@ -46,7 +46,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://santicombina.vercel.app/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Santiago Combina - Full Stack Developer',
@@ -57,7 +57,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Santiago Combina - Full Stack Developer',
     description: 'Full Stack Developer specializing in React, Next.js, and modern web technologies.',
-    images: ['/og-image.jpg'],
+    images: ['https://santicombina.vercel.app/og-image.jpg'],
   },
   icons: {
     icon: '/blue-code.png',
