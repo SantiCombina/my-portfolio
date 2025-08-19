@@ -7,7 +7,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import z from 'zod';
 
-import { useLanguage } from '@/contexts/language-context';
+import { useLanguage } from '@/lib/contexts/language-context';
 
 import { Button } from './ui/button';
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form';

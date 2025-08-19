@@ -4,7 +4,7 @@ import { Github, Heart, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'motion/react';
 
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/contexts/language-context';
+import { useLanguage } from '@/lib/contexts/language-context';
 
 export function Footer() {
   const { t } = useLanguage();

@@ -1,11 +1,21 @@
 import { motion } from 'motion/react';
 
-interface Props {
-  image: string;
-  name: string;
+import { Media, Skill } from '@/payload-types';
+
+interface SkillCardProps {
+  skill: Skill;
 }
 
-export function SkillCard({ image, name }: Props) {
+export function SkillCard({ skill }: SkillCardProps) {
+  const getImageUrl = () => {
+    if (typeof skill.image === 'object' && skill.image) {
+      return (skill.image as Media).publicUrl || '';
+    }
+    return '';
+  };
+
+  const imageUrl = getImageUrl();
+
   return (
     <div className="group relative flex flex-col items-center gap-3 p-4 rounded-2xl backdrop-blur-xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-500">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 to-gray-800/20 rounded-2xl" />
@@ -17,11 +27,11 @@ export function SkillCard({ image, name }: Props) {
           whileHover={{ rotate: [0, -10, 10, 0] }}
           transition={{ duration: 0.5 }}
         >
-          {image && (
+          {imageUrl && (
             <img
-              alt={`${name} technology logo`}
+              alt={`${skill.name} technology logo`}
               className="w-8 h-8 md:w-12 md:h-12 filter group-hover:brightness-110 transition-all duration-500"
-              src={image}
+              src={imageUrl}
             />
           )}
 
@@ -32,7 +42,7 @@ export function SkillCard({ image, name }: Props) {
       </div>
 
       <span className="relative text-sm md:text-base font-medium text-gray-300 group-hover:text-white transition-colors duration-300 text-center">
-        {name}
+        {skill.name}
       </span>
 
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-to-r from-purple-600 to-pink-600 w-0 group-hover:w-3/4 transition-all duration-500 rounded-full" />

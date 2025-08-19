@@ -3,7 +3,7 @@ import React from 'react';
 
 import { LenisProvider } from '@/components/lenis-provider';
 import { Toaster } from '@/components/ui/sonner';
-import { LanguageProvider } from '@/contexts/language-context';
+import { LanguageProvider } from '@/lib/contexts/language-context';
 
 import '@/styles/globals.css';
 

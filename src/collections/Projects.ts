@@ -4,8 +4,13 @@ export const Projects: CollectionConfig = {
   slug: 'projects',
   admin: {
     useAsTitle: 'nameEN',
-    defaultColumns: ['nameEN', 'deploy', 'updatedAt'],
+    defaultColumns: ['nameEN', 'order', 'deploy', 'updatedAt'],
+    listSearchableFields: ['nameEN', 'nameES'],
+    pagination: {
+      defaultLimit: 50,
+    },
   },
+  defaultSort: 'order',
   fields: [
     {
       name: 'nameEN',
@@ -65,6 +70,4 @@ export const Projects: CollectionConfig = {
       },
     },
   ],
-
-  defaultSort: 'order',
 };

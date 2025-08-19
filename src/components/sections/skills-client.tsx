@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 
-import { useLanguage } from '@/contexts/language-context';
+import { useLanguage } from '@/lib/contexts/language-context';
 import { Skill } from '@/payload-types';
 
 import { SkillCard } from '../skill-card';
@@ -16,7 +16,7 @@ export function SkillsClient({ skills }: SkillsClientProps) {
   const { t } = useLanguage();
 
   return (
-    <section id="skills" className="relative min-h-[100vh] flex items-center justify-center py-10 overflow-hidden">
+    <section id="skills" className="relative min-h-[100dvh] flex items-center justify-center py-10 overflow-hidden">
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
 
@@ -33,7 +33,6 @@ export function SkillsClient({ skills }: SkillsClientProps) {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {skills.map((skill, index) => {
-            const imageUrl = typeof skill.image === 'object' && skill.image ? skill.image.publicUrl || '' : '';
             return (
               <motion.div
                 key={skill.id}
@@ -42,7 +41,7 @@ export function SkillsClient({ skills }: SkillsClientProps) {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 viewport={{ once: true }}
               >
-                <SkillCard image={imageUrl} name={skill.name} />
+                <SkillCard skill={skill} />
               </motion.div>
             );
           })}

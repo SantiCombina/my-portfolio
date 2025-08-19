@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useCallback, useState, useEffect } from 'react';
 
 import { LanguageToggle } from '@/components/language-toggle';
-import { useLanguage } from '@/contexts/language-context';
-import { useActiveSection } from '@/hooks/use-active-section';
+import { useLanguage } from '@/lib/contexts/language-context';
+import { useActiveSection } from '@/lib/hooks/use-active-section';
 
 export function Navbar() {
   const { t } = useLanguage();
@@ -114,7 +114,7 @@ export function Navbar() {
               transition={{ duration: 0.5, ease: 'easeInOut' }}
             >
               <motion.div
-                className="container py-6 flex flex-col items-center justify-center min-h-[50vh]"
+                className="container py-6 flex flex-col items-center justify-center min-h-[50dvh]"
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}

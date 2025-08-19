@@ -3,7 +3,7 @@
 import { FileDown } from 'lucide-react';
 import { motion } from 'motion/react';
 
-import { useLanguage } from '@/contexts/language-context';
+import { useLanguage } from '@/lib/contexts/language-context';
 
 export function Header() {
   const { t } = useLanguage();
