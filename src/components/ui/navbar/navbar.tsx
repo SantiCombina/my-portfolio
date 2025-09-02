@@ -4,7 +4,7 @@ import { Twirl as Hamburger } from 'hamburger-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useCallback, useState, useEffect } from 'react';
 
-import { LanguageToggle } from '@/components/language-toggle';
+import { LanguageToggle } from '@/components/ui';
 import { useLanguage } from '@/lib/contexts/language-context';
 import { useActiveSection } from '@/lib/hooks/use-active-section';
 

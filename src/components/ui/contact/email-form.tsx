@@ -7,14 +7,10 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import z from 'zod';
 
+import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, Textarea } from '@/components/ui';
 import { useLanguage } from '@/lib/contexts/language-context';
 
-import { Button } from './ui/button';
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-
-export default function EmailForm() {
+export function EmailForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { t, language } = useLanguage();
 

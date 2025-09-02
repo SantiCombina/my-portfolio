@@ -1,11 +1,10 @@
 import { Montserrat } from 'next/font/google';
-import React from 'react';
 
-import { LenisProvider } from '@/components/lenis-provider';
-import { Toaster } from '@/components/ui/sonner';
+import { Toaster } from '@/components/ui';
 import { LanguageProvider } from '@/lib/contexts/language-context';
 
 import '@/styles/globals.css';
+import { LenisProvider } from '@/components/lenis-provider';
 
 const montserrat = Montserrat({
   subsets: ['latin'],

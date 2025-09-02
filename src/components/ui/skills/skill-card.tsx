@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'motion/react';
 
 import { Media, Skill } from '@/payload-types';

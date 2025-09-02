@@ -1,7 +1,8 @@
-import { Footer } from '@/components/footer';
-import { Navbar } from '@/components/navbar';
-import { ScrollProgress } from '@/components/scroll-progress';
-import { Contact, Header, Projects, Skills } from '@/components/sections';
+import { Contact } from '@/components/sections/contact';
+import { Header } from '@/components/sections/header';
+import { Projects } from '@/components/sections/projects';
+import { Skills } from '@/components/sections/skills';
+import { ScrollProgress, Navbar, Footer } from '@/components/ui';
 
 export default function HomePage() {
   return (
