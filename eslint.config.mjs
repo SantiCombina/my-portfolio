@@ -115,33 +115,33 @@ const eslintConfig = [
       "import/order": [
         "warn",
         {
-          "groups": [
+          groups: [
             "builtin",
             "external",
             "internal",
             "parent",
             "sibling",
-            "index"
+            "index",
           ],
           "newlines-between": "always",
-          "pathGroups": [
+          pathGroups: [
             {
-              "pattern": "@/**",
-              "group": "internal",
-              "position": "before"
+              pattern: "@/**",
+              group: "internal",
+              position: "before",
             },
             {
-              "pattern": "./**",
-              "group": "sibling",
-              "position": "after"
-            }
+              pattern: "./**",
+              group: "sibling",
+              position: "after",
+            },
           ],
-          "pathGroupsExcludedImportTypes": ["builtin"],
-          "alphabetize": {
-            "order": "asc",
-            "caseInsensitive": true
-          }
-        }
+          pathGroupsExcludedImportTypes: ["builtin"],
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: true,
+          },
+        },
       ],
       "import/extensions": [
         "error",
@@ -181,13 +181,6 @@ const eslintConfig = [
       "import/parsers": {
         "@typescript-eslint/parser": [".ts", ".tsx"],
       },
-    },
-  },
-  // Configuración específica para archivos CSS
-  {
-    files: ["**/*.css"],
-    languageOptions: {
-      parser: null,
     },
   },
 ];
