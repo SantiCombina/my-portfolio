@@ -4,6 +4,7 @@ import { z } from 'zod';
 
 import { getProjects as getProjectsService, getProjectById as getProjectByIdService } from '@/app/services/projects';
 import { getSkills as getSkillsService, getSkillById as getSkillByIdService } from '@/app/services/skills';
+import { getUser as getUserService } from '@/app/services/users';
 import { actionClient } from '@/lib/safe-action-client';
 
 export const getProjectsAction = actionClient.schema(z.void()).action(async () => {
@@ -67,5 +68,30 @@ export const getSkillByIdAction = actionClient
     } catch (error) {
       console.error('Error fetching skill:', error);
       throw new Error('Failed to fetch skill');
+    }
+  });
+
+export const getUserAction = actionClient
+  .schema(
+    z.object({
+      language: z.enum(['es', 'en']).optional().default('es'),
+    }),
+  )
+  .action(async ({ parsedInput: { language } }) => {
+    try {
+      const user = await getUserService();
+
+      const cvUrl = language === 'en' ? user.resume : user.curriculum;
+
+      return {
+        success: true,
+        data: {
+          ...user,
+          cvUrl,
+        },
+      };
+    } catch (error) {
+      console.error('Error fetching user:', error);
+      throw new Error('Failed to fetch user data');
     }
   });

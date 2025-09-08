@@ -7,7 +7,23 @@ export const Users: CollectionConfig = {
   },
   auth: true,
   fields: [
-    // Email added by default
-    // Add more fields as needed
+    {
+      name: 'curriculum',
+      type: 'text',
+      label: 'Curriculum (Español)',
+      admin: {
+        description: 'URL del CV en español',
+        placeholder: 'https://example.com/cv-es.pdf',
+      },
+    },
+    {
+      name: 'resume',
+      type: 'text',
+      label: 'Resume (English)',
+      admin: {
+        description: 'URL del CV en inglés',
+        placeholder: 'https://example.com/resume-en.pdf',
+      },
+    },
   ],
 };

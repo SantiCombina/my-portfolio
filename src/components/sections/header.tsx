@@ -2,11 +2,22 @@
 
 import { FileDown } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useAction } from 'next-safe-action/hooks';
+import { useEffect } from 'react';
 
 import { useLanguage } from '@/lib/contexts/language-context';
 
+import { getUserAction } from './actions';
+
 export function Header() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const { execute, result, isExecuting } = useAction(getUserAction);
+
+  useEffect(() => {
+    execute({ language });
+  }, [execute, language]);
+
+  const cvUrl = (result?.data?.success && result.data.data.cvUrl) || null;
 
   return (
     <header
@@ -50,22 +61,29 @@ export function Header() {
               {t.hero.description}
             </motion.p>
 
-            <motion.a
-              className="group relative flex px-5 py-1.5 transition-all duration-300 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl hover:from-purple-700 hover:to-pink-700 hover:scale-105 active:scale-100 shadow-lg hover:shadow-purple-500/25"
-              href={t.hero.resumeUrl}
-              rel="noopener noreferrer"
-              target="_blank"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="flex items-center gap-2 text-sm font-semibold">
-                {t.hero.resume}
-                <FileDown className="w-4 h-4 group-hover:animate-bounce" />
-              </span>
-            </motion.a>
+            {(cvUrl || isExecuting) && (
+              <motion.a
+                className={`group relative flex px-5 py-1.5 transition-all duration-300 rounded-xl shadow-lg ${
+                  isExecuting || !cvUrl
+                    ? 'bg-gray-600 cursor-not-allowed opacity-50'
+                    : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105 hover:shadow-purple-500/25'
+                } active:scale-100`}
+                href={isExecuting || !cvUrl ? undefined : cvUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                whileHover={isExecuting || !cvUrl ? {} : { scale: 1.05 }}
+                whileTap={isExecuting || !cvUrl ? {} : { scale: 0.95 }}
+                style={{ pointerEvents: isExecuting || !cvUrl ? 'none' : 'auto' }}
+              >
+                <span className="flex items-center gap-2 text-sm font-semibold">
+                  {isExecuting ? 'Loading...' : t.hero.resume}
+                  <FileDown className={`w-4 h-4 ${isExecuting ? 'animate-spin' : 'group-hover:animate-bounce'}`} />
+                </span>
+              </motion.a>
+            )}
           </div>
         </motion.div>
 

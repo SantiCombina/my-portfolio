@@ -123,6 +123,14 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: number;
+  /**
+   * URL del CV en español
+   */
+  curriculum?: string | null;
+  /**
+   * URL del CV en inglés
+   */
+  resume?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -290,6 +298,8 @@ export interface PayloadMigration {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  curriculum?: T;
+  resume?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;

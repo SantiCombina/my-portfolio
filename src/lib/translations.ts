@@ -11,7 +11,6 @@ export const translations = {
       greeting: "Hi, I'm",
       description: 'I develop landing pages, user interfaces and web applications',
       resume: 'Resume',
-      resumeUrl: 'https://drive.google.com/file/d/1RdAWhIXbefNe9k1YYZwjMZW5gb2aUbBl/view?usp=sharing',
     },
     skills: {
       title: 'My skills',
@@ -72,7 +71,6 @@ export const translations = {
       greeting: 'Hola, soy',
       description: 'Desarrollo landing pages, interfaces de usuario y aplicaciones web',
       resume: 'Currículum',
-      resumeUrl: 'https://drive.google.com/file/d/102nqSAMTm9U5hdm8E_7TXmnhBsgY4DED/view?usp=sharing',
     },
     skills: {
       title: 'Mis habilidades',

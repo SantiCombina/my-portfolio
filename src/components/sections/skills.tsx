@@ -2,11 +2,10 @@
 
 import { motion } from 'motion/react';
 import { useAction } from 'next-safe-action/hooks';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { SkillCard, Title } from '@/components/ui';
 import { useLanguage } from '@/lib/contexts/language-context';
-import type { Skill } from '@/payload-types';
 
 import { SkillsSkeleton } from '../skeletons/skill-skeleton';
 
@@ -14,36 +13,13 @@ import { getSkillsAction } from './actions';
 
 export function Skills() {
   const { t } = useLanguage();
-  const [skills, setSkills] = useState<Skill[]>([]);
-  const { execute, result, isExecuting, hasErrored } = useAction(getSkillsAction);
+  const { execute, result, isExecuting } = useAction(getSkillsAction);
 
   useEffect(() => {
     execute();
   }, [execute]);
 
-  useEffect(() => {
-    if (result?.data?.success) {
-      setSkills(result.data.data);
-    }
-  }, [result]);
-
-  if (hasErrored) {
-    return (
-      <section id="skills" className="py-10 min-h-[100dvh] flex items-center justify-center">
-        <div className="flex flex-col container items-center justify-center gap-5">
-          <h2 className="text-4xl font-bold text-center">Skills</h2>
-          <p className="text-red-500">Error loading skills</p>
-          <button
-            type="button"
-            onClick={() => execute()}
-            className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-          >
-            Try Again
-          </button>
-        </div>
-      </section>
-    );
-  }
+  const skills = result?.data?.success ? result.data.data : [];
 
   if (isExecuting) {
     return (
