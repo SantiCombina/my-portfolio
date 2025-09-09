@@ -1,7 +1,6 @@
 import { unstable_cache } from 'next/cache';
-import { getPayload } from 'payload';
 
-import configPromise from '@/payload.config';
+import { getPayloadClient } from '@/lib/payload';
 
 const CACHE_TAGS = {
   SKILLS: 'skills',
@@ -10,9 +9,7 @@ const CACHE_TAGS = {
 // Cache the skills for 5 minutes
 const getCachedSkills = unstable_cache(
   async () => {
-    const payload = await getPayload({
-      config: configPromise,
-    });
+    const payload = await getPayloadClient();
 
     const skills = await payload.find({
       collection: 'skills',
@@ -36,9 +33,7 @@ export async function getSkills() {
 }
 
 export async function getSkillById(id: string) {
-  const payload = await getPayload({
-    config: configPromise,
-  });
+  const payload = await getPayloadClient();
 
   const skill = await payload.findByID({
     collection: 'skills',

@@ -1,7 +1,6 @@
 import { unstable_cache } from 'next/cache';
-import { getPayload } from 'payload';
 
-import configPromise from '@/payload.config';
+import { getPayloadClient } from '@/lib/payload';
 
 const CACHE_TAGS = {
   PROJECTS: 'projects',
@@ -9,9 +8,7 @@ const CACHE_TAGS = {
 
 const getCachedProjects = unstable_cache(
   async () => {
-    const payload = await getPayload({
-      config: configPromise,
-    });
+    const payload = await getPayloadClient();
 
     const projects = await payload.find({
       collection: 'projects',
@@ -35,9 +32,7 @@ export async function getProjects() {
 }
 
 export async function getProjectById(id: string) {
-  const payload = await getPayload({
-    config: configPromise,
-  });
+  const payload = await getPayloadClient();
 
   const project = await payload.findByID({
     collection: 'projects',

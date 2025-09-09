@@ -1,11 +1,10 @@
 import { unstable_cache } from 'next/cache';
-import { getPayload } from 'payload';
 
-import configPromise from '@/payload.config';
+import { getPayloadClient } from '@/lib/payload';
 
 export const getUser = unstable_cache(
   async () => {
-    const payload = await getPayload({ config: configPromise });
+    const payload = await getPayloadClient();
 
     try {
       const result = await payload.find({
@@ -35,7 +34,7 @@ export const getUser = unstable_cache(
 
 export const getUserById = unstable_cache(
   async (id: string) => {
-    const payload = await getPayload({ config: configPromise });
+    const payload = await getPayloadClient();
 
     try {
       const user = await payload.findByID({

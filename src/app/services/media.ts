@@ -1,7 +1,6 @@
 import { unstable_cache } from 'next/cache';
-import { getPayload } from 'payload';
 
-import configPromise from '@/payload.config';
+import { getPayloadClient } from '@/lib/payload';
 
 const CACHE_TAGS = {
   MEDIA: 'media',
@@ -9,9 +8,7 @@ const CACHE_TAGS = {
 
 const getCachedMedia = unstable_cache(
   async () => {
-    const payload = await getPayload({
-      config: configPromise,
-    });
+    const payload = await getPayloadClient();
 
     const media = await payload.find({
       collection: 'media',
@@ -34,9 +31,7 @@ export async function getMedia() {
 }
 
 export async function getMediaById(id: string) {
-  const payload = await getPayload({
-    config: configPromise,
-  });
+  const payload = await getPayloadClient();
 
   const media = await payload.findByID({
     collection: 'media',
