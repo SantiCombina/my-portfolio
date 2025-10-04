@@ -17,6 +17,24 @@ export function SkillSkeleton() {
   );
 }
 
+export function SkillsSkeletonSection() {
+  return (
+    <section id="skills" className="py-10 min-h-[100dvh] flex items-center justify-center">
+      <div className="flex flex-col container items-center justify-center gap-5">
+        <div className="text-center space-y-2">
+          <Skeleton className="h-6 w-32 mx-auto bg-gray-800/50" />
+          <Skeleton className="h-12 w-64 mx-auto bg-gray-800/50" />
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 w-full max-w-6xl">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <SkillSkeleton key={i} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function SkillsSkeleton() {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">

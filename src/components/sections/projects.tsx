@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { ProjectCard, Title } from '@/components/ui';
 import { useLanguage } from '@/lib/contexts/language-context';
 
-import { ProjectsSkeleton } from '../skeletons/project-skeleton';
+import { ProjectsSkeletonSection } from '../skeletons';
 
 import { getProjectsAction } from './actions';
 
@@ -22,19 +22,7 @@ export function Projects() {
   const projects = result?.data?.success ? result.data.data : [];
 
   if (isExecuting) {
-    return (
-      <section id="projects" className="py-10 min-h-[100dvh] flex items-center justify-center">
-        <div className="flex flex-col container items-center justify-center gap-16">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Projects
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Loading projects...</p>
-          </div>
-          <ProjectsSkeleton />
-        </div>
-      </section>
-    );
+    return <ProjectsSkeletonSection />;
   }
 
   if (!projects || projects.length === 0) {

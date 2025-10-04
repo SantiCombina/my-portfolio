@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { SkillCard, Title } from '@/components/ui';
 import { useLanguage } from '@/lib/contexts/language-context';
 
-import { SkillsSkeleton } from '../skeletons/skill-skeleton';
+import { SkillsSkeletonSection } from '../skeletons';
 
 import { getSkillsAction } from './actions';
 
@@ -22,19 +22,7 @@ export function Skills() {
   const skills = result?.data?.success ? result.data.data : [];
 
   if (isExecuting) {
-    return (
-      <section id="skills" className="py-10 min-h-[100dvh] flex items-center justify-center">
-        <div className="flex flex-col container items-center justify-center gap-16">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Skills
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Loading skills...</p>
-          </div>
-          <SkillsSkeleton />
-        </div>
-      </section>
-    );
+    return <SkillsSkeletonSection />;
   }
 
   return (

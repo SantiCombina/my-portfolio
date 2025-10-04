@@ -27,6 +27,24 @@ export function ProjectSkeleton() {
   );
 }
 
+export function ProjectsSkeletonSection() {
+  return (
+    <section id="projects" className="py-10 min-h-[100dvh] flex items-center justify-center">
+      <div className="flex flex-col container items-center justify-center gap-5">
+        <div className="text-center space-y-2">
+          <Skeleton className="h-6 w-32 mx-auto bg-gray-800/50" />
+          <Skeleton className="h-12 w-48 mx-auto bg-gray-800/50" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <ProjectSkeleton key={i} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function ProjectsSkeleton() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -56,9 +56,9 @@ export const Projects: CollectionConfig = {
     {
       name: 'deploy',
       type: 'text',
-      required: true,
+      required: false,
       admin: {
-        description: 'Live demo URL',
+        description: 'Live demo URL (optional)',
       },
     },
     {

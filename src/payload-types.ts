@@ -218,9 +218,9 @@ export interface Project {
    */
   image?: (number | null) | Media;
   /**
-   * Live demo URL
+   * Live demo URL (optional)
    */
-  deploy: string;
+  deploy?: string | null;
   /**
    * Order in which the project should appear
    */
