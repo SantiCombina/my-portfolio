@@ -71,9 +71,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
         )}
 
         <div className="relative p-6 space-y-4 w-full">
-          <h2 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors break-words w-full min-h-[2rem] flex items-start">
+          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors break-words w-full min-h-[2rem] flex items-start">
             {projectName}
-          </h2>
+          </h3>
           <p className="text-gray-300 leading-relaxed text-sm min-h-[3rem] flex items-start break-words w-full">
             {projectDescription}
           </p>

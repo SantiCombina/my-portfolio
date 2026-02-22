@@ -51,7 +51,7 @@ export function Header() {
             </span>
           </motion.h1>
 
-          <div className="flex flex-col items-center gap-4 px-4 sm:px-6">
+<div className="flex flex-col items-center gap-4 px-4 sm:px-6">
             <motion.p
               className="text-[#DFD9FF] max-w-[550px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center text-wrap"
               initial={{ opacity: 0, y: 20 }}
@@ -99,7 +99,7 @@ export function Header() {
           }}
         >
           <motion.img
-            alt="face"
+            alt="Santiago Combina - Full Stack Developer"
             className="rounded-full select-none w-60 h-60 md:h-80 md:w-80 border-2 border-purple-500/20 shadow-2xl"
             height="320"
             src="./face.webp"

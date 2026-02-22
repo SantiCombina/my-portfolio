@@ -54,7 +54,6 @@ export const translations = {
     footer: {
       role: 'Full Stack Developer',
       made_with: 'Made with',
-      using: 'using Next.js & PayloadCMS',
       rights: 'All rights reserved.',
       back_to_top: 'Back to top',
     },
@@ -114,7 +113,6 @@ export const translations = {
     footer: {
       role: 'Desarrollador Full Stack',
       made_with: 'Hecho con',
-      using: 'usando Next.js y PayloadCMS',
       rights: 'Todos los derechos reservados.',
       back_to_top: 'Volver arriba',
     },

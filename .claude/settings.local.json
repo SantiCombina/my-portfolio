@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"C:/Users/santi/Documents/Workspace/my-portfolio\" && pnpm lint 2>&1)",
+      "Bash(cd \"C:/Users/santi/Documents/Workspace/my-portfolio\" && pnpm build 2>&1)"
+    ]
+  }
+}

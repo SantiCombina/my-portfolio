@@ -33,6 +33,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (mounted && typeof window !== 'undefined') {
       localStorage.setItem('language', language);
+      document.cookie = `lang=${language};path=/;max-age=31536000;SameSite=Lax`;
     }
   }, [language, mounted]);
 

@@ -16,7 +16,7 @@ export function Title({ h2, h3 }: Props) {
       viewport={{ once: true, amount: 0.3 }}
       whileInView={{ y: 0, opacity: 1 }}
     >
-      <motion.h3
+      <motion.p
         className="text-lg font-medium text-purple-400 mb-1 tracking-wider uppercase"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -24,7 +24,7 @@ export function Title({ h2, h3 }: Props) {
         viewport={{ once: true }}
       >
         {h2}
-      </motion.h3>
+      </motion.p>
       <motion.h2
         className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
         initial={{ opacity: 0, y: 20 }}
