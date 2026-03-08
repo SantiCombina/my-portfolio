@@ -41,7 +41,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
 
       <div className="container relative z-10">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -50,7 +50,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
           <Title h2={t.projects.title} h3={t.projects.subtitle} />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto place-items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto place-items-start">
           {initialProjects.map((project, index) => (
             <motion.div
               key={project.id}

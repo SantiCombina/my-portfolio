@@ -38,8 +38,10 @@ export function Navbar() {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 z-50 flex items-center justify-center w-full h-16 transition-all duration-500 ${
-          isScrolled ? 'bg-gray-950/85 backdrop-blur-xl shadow-lg shadow-purple-500/5' : 'bg-transparent'
+        className={`fixed top-0 z-50 flex items-center justify-center w-full h-16 border-b transition-all duration-500 ${
+          isScrolled
+            ? 'bg-white/[0.06] backdrop-blur-md border-white/[0.08]'
+            : 'bg-transparent border-transparent'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -107,7 +109,7 @@ export function Navbar() {
             <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMenuOpen(false)} />
 
             <motion.div
-              className="absolute top-16 left-0 right-0 h-full bg-gray-950/95 backdrop-blur-xl border-b border-gray-800/50 shadow-lg shadow-purple-500/10"
+              className="absolute top-16 left-0 right-0 h-full bg-[#050816]/80 backdrop-blur-xl border-b border-white/10"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: '100vh', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}

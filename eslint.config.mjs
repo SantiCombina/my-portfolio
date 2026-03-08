@@ -16,6 +16,11 @@ const eslintConfig = [
     extends: ["next", "next/typescript", "next/core-web-vitals"],
   }),
 
+  // Ignorar carpeta de Payload CMS
+  {
+    ignores: ["src/app/(payload)/**"],
+  },
+
   // Configuración para archivos TypeScript y JavaScript
   {
     files: ["**/*.{js,jsx,ts,tsx}"],

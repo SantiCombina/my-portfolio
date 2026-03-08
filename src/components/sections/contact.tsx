@@ -68,7 +68,6 @@ export function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/8 to-pink-600/8 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
             <EmailForm />
           </motion.div>
 

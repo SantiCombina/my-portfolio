@@ -72,7 +72,7 @@ export function EmailForm() {
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(onSubmit)}
-        className="relative bg-gray-900/40 backdrop-blur-xl border border-gray-700/50 rounded-2xl space-y-2 p-8 hover:border-purple-500/50 transition-all duration-500 h-full flex flex-col"
+        className="relative bg-gray-900/40 backdrop-blur-xl border border-gray-700/50 hover:border-pink-400/50 rounded-2xl space-y-2 p-8 transition-colors duration-300 h-full flex flex-col"
       >
         <h3 className="text-2xl font-semibold mb-5 text-gray-100">{t.contact.form.title}</h3>
 
