@@ -118,7 +118,13 @@
   }
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(to right, #0A0613, #0A051B, #0E0916);
+    background-image:
+      linear-gradient(to right, rgba(10, 6, 19, 0.82), rgba(10, 5, 27, 0.78), rgba(14, 9, 22, 0.82)),
+      url('/herobg.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
   
   ::selection {
@@ -150,12 +156,6 @@
   }
 }
 
-.hero-bg {
-  background-image: url('/herobg.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
 @keyframes bounce-custom {
   100% {
@@ -206,6 +206,15 @@
 
 .animate-glow {
   animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.15; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
 }
 
 .font-montserrat {

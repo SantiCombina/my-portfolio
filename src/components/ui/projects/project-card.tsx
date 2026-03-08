@@ -2,6 +2,7 @@
 
 import { ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 
 import { useLanguage } from '@/lib/contexts/language-context';
 import { Media, Project } from '@/payload-types';
@@ -45,11 +46,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
           >
             <div className="relative overflow-hidden">
               {imageUrl && (
-                <img
-                  alt={`${projectName} project screenshot`}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  src={imageUrl}
-                />
+                <div className="relative h-48">
+                  <Image
+                    fill
+                    alt={`${projectName} project screenshot`}
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    src={imageUrl}
+                  />
+                </div>
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               <motion.div
@@ -64,7 +69,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
         ) : (
           <div className="relative overflow-hidden">
             {imageUrl && (
-              <img alt={`${projectName} project screenshot`} className="w-full h-48 object-cover" src={imageUrl} />
+              <div className="relative h-48">
+                <Image
+                  fill
+                  alt={`${projectName} project screenshot`}
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  src={imageUrl}
+                />
+              </div>
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>

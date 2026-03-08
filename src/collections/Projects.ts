@@ -62,6 +62,18 @@ export const Projects: CollectionConfig = {
       },
     },
     {
+      name: 'status',
+      type: 'select',
+      defaultValue: 'active',
+      options: [
+        { label: 'Active', value: 'active' },
+        { label: 'Inactive', value: 'inactive' },
+      ],
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'order',
       type: 'number',
       admin: {

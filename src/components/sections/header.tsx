@@ -2,6 +2,7 @@
 
 import { FileDown } from 'lucide-react';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import { useAction } from 'next-safe-action/hooks';
 import { useEffect } from 'react';
 
@@ -22,10 +23,10 @@ export function Header() {
   return (
     <header
       id="home"
-      className="relative flex flex-col-reverse items-center justify-center w-full min-h-[100dvh] gap-2 py-10 lg:gap-32 lg:flex-row hero-bg overflow-hidden"
+      className="relative flex flex-col-reverse items-center justify-center w-full min-h-[100dvh] gap-2 py-10 lg:gap-32 lg:flex-row overflow-hidden"
     >
-      <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse-slow" />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl" />
 
       <div className="container w-full px-4 sm:px-6 mx-auto flex flex-col-reverse lg:flex-row items-center justify-center gap-2 lg:gap-32">
@@ -51,7 +52,7 @@ export function Header() {
             </span>
           </motion.h1>
 
-<div className="flex flex-col items-center gap-4 px-4 sm:px-6">
+          <div className="flex flex-col items-center gap-4 px-4 sm:px-6">
             <motion.p
               className="text-[#DFD9FF] max-w-[550px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center text-wrap"
               initial={{ opacity: 0, y: 20 }}
@@ -98,24 +99,17 @@ export function Header() {
             delay: 0.3,
           }}
         >
-          <motion.img
-            alt="Santiago Combina - Full Stack Developer"
-            className="rounded-full select-none w-60 h-60 md:h-80 md:w-80 border-2 border-purple-500/20 shadow-2xl"
-            height="320"
-            src="./face.webp"
-            style={{
-              filter: 'drop-shadow(0px 0px 30px rgba(168, 85, 247, 0.4))',
-            }}
-            width="320"
-            animate={{
-              y: [0, -10, 0],
-            }}
-            transition={{
-              duration: 3,
-              ease: 'easeInOut',
-              repeat: Infinity,
-            }}
-          />
+          <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, ease: 'easeInOut', repeat: Infinity }}>
+            <Image
+              priority
+              alt="Santiago Combina - Full Stack Developer"
+              className="rounded-full select-none w-60 h-60 md:h-80 md:w-80 border-2 border-purple-500/20 shadow-2xl"
+              height={320}
+              src="/face.webp"
+              style={{ filter: 'drop-shadow(0px 0px 30px rgba(168, 85, 247, 0.4))' }}
+              width={320}
+            />
+          </motion.div>
 
           <motion.div
             className="absolute -top-5 -right-5 w-4 h-4 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"

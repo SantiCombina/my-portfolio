@@ -221,6 +221,7 @@ export interface Project {
    * Live demo URL (optional)
    */
   deploy?: string | null;
+  status?: ('active' | 'inactive') | null;
   /**
    * Order in which the project should appear
    */
@@ -359,6 +360,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   descriptionES?: T;
   image?: T;
   deploy?: T;
+  status?: T;
   order?: T;
   updatedAt?: T;
   createdAt?: T;

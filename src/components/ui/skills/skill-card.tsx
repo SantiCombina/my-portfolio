@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+import Image from 'next/image';
 
 import { Media, Skill } from '@/payload-types';
 
@@ -30,10 +31,13 @@ export function SkillCard({ skill }: SkillCardProps) {
           transition={{ duration: 0.5 }}
         >
           {imageUrl && (
-            <img
+            <Image
+              unoptimized
               alt={`${skill.name} technology logo`}
               className="w-8 h-8 md:w-12 md:h-12 filter group-hover:brightness-110 transition-all duration-500"
+              height={48}
               src={imageUrl}
+              width={48}
             />
           )}
 

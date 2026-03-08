@@ -46,7 +46,6 @@ export function Contact() {
 
   return (
     <section id="contact" className="relative min-h-[100dvh] py-10 overflow-hidden flex items-center justify-center">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-pink-900/10" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
 

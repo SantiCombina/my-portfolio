@@ -15,6 +15,7 @@ const getCachedProjects = unstable_cache(
       sort: 'order',
       limit: 100,
       depth: 2,
+      where: { status: { equals: 'active' } },
     });
 
     return projects.docs;
