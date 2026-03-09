@@ -116,6 +116,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     background-image:
@@ -126,41 +127,24 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
-  
+
   ::selection {
     background-color: rgb(192 38 211);
     color: white;
   }
-  
+
   ::-moz-selection {
-    background-color: rgb(192 38 211); 
+    background-color: rgb(192 38 211);
     color: white;
   }
-}
 
-@layer components {
   ::-webkit-scrollbar {
     display: none;
   }
-  
-  .gradient-bg {
-    background: linear-gradient(to right, #0A0613, #0A051B, #0E0916);
-  }
-  
-  .container {
-    max-width: 1440px !important;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
 }
 
-
 @keyframes bounce-custom {
-  100% {
-    transform: translateY(20px);
-  }
+  100% { transform: translateY(20px); }
 }
 
 @keyframes gradient-x {
@@ -175,37 +159,13 @@
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
 
 @keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(168, 85, 247, 0.6);
-  }
-}
-
-.animate-bounce {
-  animation: bounce-custom 2s infinite ease alternate;
-}
-
-.animate-gradient-x {
-  animation: gradient-x 3s ease infinite;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-glow {
-  animation: glow 2s ease-in-out infinite alternate;
+  0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.6); }
 }
 
 @keyframes pulse-slow {
@@ -213,10 +173,37 @@
   50% { opacity: 0.15; }
 }
 
-.animate-pulse-slow {
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.2rem;
+  max-width: var(--container-max-width);
+}
+
+@utility gradient-bg {
+  background: linear-gradient(to right, #0A0613, #0A051B, #0E0916);
+}
+
+@utility animate-bounce {
+  animation: bounce-custom 2s infinite ease alternate;
+}
+
+@utility animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+}
+
+@utility animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@utility animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@utility animate-pulse-slow {
   animation: pulse-slow 6s ease-in-out infinite;
 }
 
-.font-montserrat {
-  font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@utility font-montserrat {
+  font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }

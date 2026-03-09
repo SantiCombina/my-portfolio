@@ -4,6 +4,7 @@ import { Twirl as Hamburger } from 'hamburger-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useCallback, useState, useEffect } from 'react';
 
+import { useLenis } from '@/components/lenis-provider';
 import { LanguageToggle } from '@/components/ui';
 import { useLanguage } from '@/lib/contexts/language-context';
 import { useActiveSection } from '@/lib/hooks/use-active-section';
@@ -12,12 +13,22 @@ export function Navbar() {
   const { t } = useLanguage();
   const { activeSection, isScrolled } = useActiveSection();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const lenis = useLenis();
 
   useEffect(() => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
   }, [activeSection]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      lenis?.stop();
+    } else {
+      lenis?.start();
+    }
+    return () => { lenis?.start(); };
+  }, [isMenuOpen, lenis]);
 
   const scrollToSection = useCallback((sectionId: string) => {
     if (typeof window === 'undefined') return;
@@ -39,9 +50,7 @@ export function Navbar() {
     <>
       <motion.nav
         className={`fixed top-0 z-50 flex items-center justify-center w-full h-16 border-b transition-all duration-500 ${
-          isScrolled
-            ? 'bg-white/[0.06] backdrop-blur-md border-white/[0.08]'
-            : 'bg-transparent border-transparent'
+          isScrolled ? 'bg-white/[0.06] backdrop-blur-md border-white/[0.08]' : 'bg-transparent border-transparent'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
