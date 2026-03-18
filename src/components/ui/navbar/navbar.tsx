@@ -43,6 +43,7 @@ export function Navbar() {
 
   const navItems = [
     { id: 'home', label: t.navbar_sections.home },
+    { id: 'about', label: t.navbar_sections.about },
     { id: 'projects', label: t.navbar_sections.work },
     { id: 'skills', label: t.navbar_sections.skills },
     { id: 'contact', label: t.navbar_sections.contact },

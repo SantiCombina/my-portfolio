@@ -70,11 +70,6 @@ export const metadata = {
     description: 'Full Stack Developer specializing in React, Next.js, and modern web technologies.',
     images: ['/og-image.jpg'],
   },
-  icons: {
-    icon: '/blue-code.png',
-    shortcut: '/blue-code.png',
-    apple: '/blue-code.png',
-  },
 };
 
 const personSchema = {

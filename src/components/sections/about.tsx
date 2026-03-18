@@ -8,7 +8,7 @@ export function About() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section id="about" className="relative py-20 overflow-hidden">
       <div className="container relative z-10">
         <div className="flex flex-col md:flex-row items-end gap-0 max-w-5xl mx-auto">
           <motion.div

@@ -21,7 +21,7 @@ export function useActiveSection(): UseActiveSection {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 20);
 
-      const sections = ['home', 'projects', 'skills', 'contact'];
+      const sections = ['home', 'about', 'projects', 'skills', 'contact'];
       const currentSection = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {

@@ -3,6 +3,7 @@ export const translations = {
     navbar_logo: 'Developer',
     navbar_sections: {
       home: 'Home',
+      about: 'About',
       work: 'Work',
       skills: 'Skills',
       contact: 'Contact',
@@ -89,6 +90,7 @@ export const translations = {
     navbar_logo: 'Desarrollador',
     navbar_sections: {
       home: 'Inicio',
+      about: 'Sobre mí',
       work: 'Trabajo',
       skills: 'Habilidades',
       contact: 'Contacto',
