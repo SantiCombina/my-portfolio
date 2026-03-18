@@ -15,7 +15,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
 
   if (!initialProjects || initialProjects.length === 0) {
     return (
-      <section id="projects" className="relative min-h-[100dvh] py-10 overflow-hidden flex items-center justify-center">
+      <section id="projects" className="relative py-20 overflow-hidden flex items-center justify-center">
         <div className="container relative z-10">
           <motion.div
             className="text-center mb-16"
@@ -35,10 +35,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
   }
 
   return (
-    <section id="projects" className="relative min-h-[100dvh] py-10 overflow-hidden">
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
-
+    <section id="projects" className="relative py-20 overflow-hidden">
       <div className="container relative z-10">
         <motion.div
           className="text-center mb-12"

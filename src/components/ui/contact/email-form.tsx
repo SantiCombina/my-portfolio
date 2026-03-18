@@ -72,9 +72,9 @@ export function EmailForm() {
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(onSubmit)}
-        className="relative bg-gray-900/40 backdrop-blur-xl border border-gray-700/50 hover:border-pink-400/50 rounded-2xl space-y-2 p-8 transition-colors duration-300 h-full flex flex-col"
+        className="relative bg-white/[0.03] backdrop-blur-xs border border-white/10 hover:border-pink-400/50 rounded-2xl space-y-2 p-5 transition-colors duration-300 h-full flex flex-col"
       >
-        <h3 className="text-2xl font-semibold mb-5 text-gray-100">{t.contact.form.title}</h3>
+        <h3 className="text-base font-semibold mb-3 text-gray-100">{t.contact.form.title}</h3>
 
         <FormField
           control={methods.control}
@@ -125,7 +125,7 @@ export function EmailForm() {
           type="submit"
           disabled={isSubmitting}
           className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 disabled:opacity-50"
-          size="lg"
+          size="sm"
         >
           {isSubmitting ? (
             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

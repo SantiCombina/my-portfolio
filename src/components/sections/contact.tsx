@@ -45,10 +45,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative min-h-[100dvh] py-10 overflow-hidden flex items-center justify-center">
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
-
+    <section id="contact" className="relative py-20 overflow-hidden flex items-center justify-center">
       <div className="container relative z-10">
         <motion.div
           className="text-center mb-16"
@@ -60,7 +57,7 @@ export function Contact() {
           <Title h2={t.contact.title} h3={t.contact.subtitle} />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-4xl mx-auto">
           <motion.div
             className="relative group h-full"
             initial={{ opacity: 0, x: -50 }}
@@ -72,13 +69,13 @@ export function Contact() {
           </motion.div>
 
           <motion.div
-            className="space-y-6 h-full flex flex-col"
+            className="h-full flex flex-col"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="flex-1 flex flex-col justify-between space-y-6">
+            <div className="flex-1 flex flex-col gap-3">
               {contactInfo.map((contact, index) => {
                 const Icon = contact.icon;
                 return (
@@ -96,16 +93,18 @@ export function Contact() {
                     <div
                       className={`absolute inset-0 bg-gradient-to-r ${contact.color} opacity-0 group-hover:opacity-20 rounded-xl blur-lg transition-all duration-500`}
                     />
-                    <div className="relative bg-gray-900/40 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 group-hover:border-purple-500/50 transition-all duration-500 h-full flex items-center">
-                      <div className="flex items-center gap-4 w-full">
-                        <div className={`p-3 rounded-lg bg-gradient-to-r ${contact.color}`}>
-                          <Icon className="w-6 h-6 text-white" />
+                    <div className="relative bg-white/[0.03] backdrop-blur-xs border border-white/10 rounded-xl p-4 group-hover:border-purple-500/50 transition-all duration-500 h-full flex items-center">
+                      <div className="flex items-center gap-3 w-full">
+                        <div className={`p-2 rounded-lg bg-gradient-to-r ${contact.color}`}>
+                          <Icon className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-gray-100 group-hover:text-purple-300 transition-colors">
+                          <h4 className="text-sm font-semibold text-gray-100 group-hover:text-purple-300 transition-colors">
                             {contact.label}
                           </h4>
-                          <p className="text-gray-400 group-hover:text-gray-300 transition-colors">{contact.value}</p>
+                          <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
+                            {contact.value}
+                          </p>
                         </div>
                       </div>
                     </div>

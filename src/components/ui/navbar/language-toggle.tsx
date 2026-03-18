@@ -5,7 +5,11 @@ import { useEffect, useState } from 'react';
 
 import { useLanguage } from '@/lib/contexts/language-context';
 
-export function LanguageToggle() {
+interface LanguageToggleProps {
+  textClassName?: string;
+}
+
+export function LanguageToggle({ textClassName = 'text-sm' }: LanguageToggleProps) {
   const { language, setLanguage } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
@@ -24,7 +28,7 @@ export function LanguageToggle() {
         type="button"
       >
         <Languages size={18} />
-        <span className="text-sm">EN</span>
+        <span className={textClassName}>EN</span>
       </button>
     );
   }
@@ -36,7 +40,7 @@ export function LanguageToggle() {
       type="button"
     >
       <Languages size={18} />
-      <span className="text-lg">{language}</span>
+      <span className={textClassName}>{language}</span>
     </button>
   );
 }

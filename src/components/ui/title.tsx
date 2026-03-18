@@ -17,7 +17,7 @@ export function Title({ h2, h3 }: Props) {
       whileInView={{ y: 0, opacity: 1 }}
     >
       <motion.p
-        className="text-lg font-medium text-purple-400 mb-1 tracking-wider uppercase"
+        className="text-xs font-medium text-purple-400 mb-1 tracking-wider uppercase"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -26,15 +26,13 @@ export function Title({ h2, h3 }: Props) {
         {h2}
       </motion.p>
       <motion.h2
-        className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
+        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600">
-          {h3}
-        </span>{' '}
+        {h3}
       </motion.h2>
 
       <motion.div

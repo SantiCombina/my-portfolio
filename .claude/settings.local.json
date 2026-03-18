@@ -3,7 +3,10 @@
     "allow": [
       "Bash(cd \"C:/Users/santi/Documents/Workspace/my-portfolio\" && pnpm lint 2>&1)",
       "Bash(cd \"C:/Users/santi/Documents/Workspace/my-portfolio\" && pnpm build 2>&1)",
-      "Bash(pnpm generate:types)"
+      "Bash(pnpm generate:types)",
+      "Bash(node -e \"const l = require\\(''lucide-react''\\); console.log\\(Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\(''instagram''\\) || k.toLowerCase\\(\\).includes\\(''linkedin''\\)\\)\\)\")",
+      "Bash(node -e \"const l = require\\(''lucide-react''\\); const keys = Object.keys\\(l\\); keys.filter\\(k => !l[k]?.deprecated && \\(k.toLowerCase\\(\\).includes\\(''instagram''\\) || k.toLowerCase\\(\\).includes\\(''linkedin''\\)\\)\\).forEach\\(k => console.log\\(k\\)\\)\")",
+      "Bash(node -e \"console.log\\(require\\(''lucide-react/package.json''\\).version\\)\")"
     ]
   }
 }

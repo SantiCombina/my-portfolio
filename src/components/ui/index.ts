@@ -7,7 +7,6 @@ export * from './input';
 export * from './label';
 export * from './navbar/language-toggle';
 export * from './navbar/navbar';
-export * from './navbar/scroll-progress';
 export * from './projects/project-card';
 export * from './skeleton';
 export * from './skills/skill-card';

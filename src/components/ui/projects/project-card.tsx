@@ -31,8 +31,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const imageUrl = getImageUrl();
 
   return (
-    <article className="group relative rounded-2xl w-full overflow-hidden backdrop-blur-xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 to-gray-800/40" />
+    <article className="group relative rounded-2xl w-full overflow-hidden bg-white/[0.03] backdrop-blur-xs border border-white/10 hover:border-purple-500/50 transition-all duration-500">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-pink-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative flex flex-col">
         {project.deploy ? (
@@ -45,7 +44,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           >
             <div className="relative overflow-hidden">
               {imageUrl && (
-                <div className="relative h-52">
+                <div className="relative aspect-video">
                   <Image
                     fill
                     alt={`${projectName} project screenshot`}
@@ -68,7 +67,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         ) : (
           <div className="relative overflow-hidden">
             {imageUrl && (
-              <div className="relative h-52">
+              <div className="relative aspect-video">
                 <Image
                   fill
                   alt={`${projectName} project screenshot`}
@@ -82,11 +81,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         )}
 
-        <div className="relative p-6 space-y-3 w-full">
-          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300 transition-colors break-words w-full">
+        <div className="relative p-4 space-y-2 w-full">
+          <h3 className="text-sm font-semibold text-white group-hover:text-purple-300 transition-colors break-words w-full">
             {projectName}
           </h3>
-          <p className="text-gray-400 leading-relaxed text-sm min-h-[3rem] break-words w-full">{projectDescription}</p>
+          <p className="text-gray-400 leading-relaxed text-xs min-h-[2.5rem] break-words w-full">
+            {projectDescription}
+          </p>
         </div>
       </div>
 

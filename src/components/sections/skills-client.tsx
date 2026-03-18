@@ -14,10 +14,7 @@ export function SkillsClient({ initialSkills }: SkillsClientProps) {
   const { t } = useLanguage();
 
   return (
-    <section id="skills" className="relative min-h-[100dvh] flex items-center justify-center py-10 overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
-
+    <section id="skills" className="relative py-20 flex items-center justify-center overflow-hidden">
       <div className="container relative z-10">
         <motion.div
           className="text-center mb-12"
@@ -29,7 +26,7 @@ export function SkillsClient({ initialSkills }: SkillsClientProps) {
           <Title h2={t.skills.title} h3={t.skills.subtitle} />
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 max-w-4xl mx-auto">
           {initialSkills.map((skill, index) => (
             <motion.div
               key={skill.id}

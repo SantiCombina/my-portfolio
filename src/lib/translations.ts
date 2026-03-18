@@ -9,8 +9,35 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
-      description: 'I develop landing pages, user interfaces and web applications',
+      description:
+        'I build digital products that combine technical precision with a sharp eye for design — frontend-first, full-stack when it matters.',
       resume: 'Resume',
+    },
+    about: {
+      overline: 'About me',
+      title: 'Built different',
+      description:
+        "I'm a software developer based in Argentina with a strong focus on frontend. I care about craft, execution, and shipping products that actually work. I've led projects end-to-end — from architecture decisions to client conversations — and I bring that same ownership mentality to every line of code I write.",
+      traits: [
+        {
+          title: 'Frontend-first',
+          description: 'I obsess over interfaces — performance, accessibility, and every pixel that matters.',
+        },
+        {
+          title: 'Execution',
+          description: 'From idea to shipped product. I own the full cycle and deliver.',
+        },
+        {
+          title: 'Product mindset',
+          description: 'I think about users and business goals, not just code.',
+        },
+      ],
+      forge: {
+        overline: 'Agency',
+        description1:
+          "I'm currently founding Forge, a software agency focused on crafting high-quality digital products with clarity, performance and long-term scalability.",
+        description2: 'The goal is simple: build software that feels intentional, strategic and built to last.',
+      },
     },
     skills: {
       title: 'My skills',
@@ -34,7 +61,7 @@ export const translations = {
         name: 'Name',
         email: 'Email',
         message: 'Message',
-        send: 'Send Message',
+        send: 'Send message',
         sending: 'Sending...',
         success: 'Message sent successfully!',
         error: 'Error sending message. Please try again.',
@@ -68,8 +95,36 @@ export const translations = {
     },
     hero: {
       greeting: 'Hola, soy',
-      description: 'Desarrollo landing pages, interfaces de usuario y aplicaciones web',
+      description:
+        'Construyo productos digitales que combinan precisión técnica con atención al diseño — frontend primero, full-stack cuando importa.',
       resume: 'Currículum',
+    },
+    about: {
+      overline: 'Sobre mí',
+      title: 'Construido diferente',
+      description:
+        'Soy desarrollador de software radicado en Argentina con foco en frontend. Me importa el craft, la ejecución y entregar productos que realmente funcionen. He liderado proyectos de punta a punta — desde decisiones de arquitectura hasta conversaciones con clientes — y traigo esa misma mentalidad a cada línea de código que escribo.',
+      traits: [
+        {
+          title: 'Frontend primero',
+          description: 'Me obsesionan las interfaces — rendimiento, accesibilidad y cada píxel que importa.',
+        },
+        {
+          title: 'Ejecución',
+          description: 'De la idea al producto entregado. Me hago cargo del ciclo completo.',
+        },
+        {
+          title: 'Mentalidad de producto',
+          description: 'Pienso en usuarios y objetivos de negocio, no solo en código.',
+        },
+      ],
+      forge: {
+        overline: 'Agencia',
+        description1:
+          'Actualmente estoy fundando Forge, una agencia de software enfocada en crear productos digitales de alta calidad con claridad, performance y escalabilidad a largo plazo.',
+        description2:
+          'El objetivo es simple: construir software que se sienta intencional, estratégico y hecho para durar.',
+      },
     },
     skills: {
       title: 'Mis habilidades',
@@ -93,7 +148,7 @@ export const translations = {
         name: 'Nombre',
         email: 'Correo',
         message: 'Mensaje',
-        send: 'Enviar Mensaje',
+        send: 'Enviar mensaje',
         sending: 'Enviando...',
         success: '¡Mensaje enviado exitosamente!',
         error: 'Error al enviar el mensaje. Intenta nuevamente.',

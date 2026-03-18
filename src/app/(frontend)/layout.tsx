@@ -1,4 +1,4 @@
-import { Montserrat } from 'next/font/google';
+import { Montserrat, Playfair_Display } from 'next/font/google';
 import { cookies } from 'next/headers';
 
 import { LenisProvider } from '@/components/lenis-provider';
@@ -11,8 +11,14 @@ const SITE_URL = 'https://santicombina.vercel.app';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-montserrat',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-inter',
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+});
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  weight: ['700'],
 });
 
 export const metadata = {
@@ -93,11 +99,11 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const lang = cookieStore.get('lang')?.value === 'es' ? 'es' : 'en';
 
   return (
-    <html lang={lang} className={montserrat.variable}>
+    <html lang={lang} className={`${montserrat.variable} ${playfair.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </head>
-      <body className="font-montserrat antialiased">
+      <body className="font-inter antialiased">
         <LanguageProvider>
           <LenisProvider>
             <main>{children}</main>

@@ -27,7 +27,9 @@ export function Navbar() {
     } else {
       lenis?.start();
     }
-    return () => { lenis?.start(); };
+    return () => {
+      lenis?.start();
+    };
   }, [isMenuOpen, lenis]);
 
   const scrollToSection = useCallback((sectionId: string) => {
@@ -58,21 +60,21 @@ export function Navbar() {
       >
         <div className="flex items-center justify-between gap-2 w-full container">
           <motion.div
-            className="flex gap-1 text-lg font-bold items-center cursor-pointer group whitespace-nowrap"
+            className="flex gap-1 text-base font-semibold items-center cursor-pointer group whitespace-nowrap"
             onClick={() => scrollToSection('home')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <span className="text-white group-hover:text-purple-300 transition-colors">
               Santiago Combina
-              <span className="inline-block align-middle px-1 text-xs md:text-base text-gray-400 group-hover:text-purple-400 whitespace-nowrap">
+              <span className="inline-block align-middle px-1 text-xs md:text-sm text-gray-400 group-hover:text-purple-400 whitespace-nowrap">
                 | {t.navbar_logo}
               </span>
             </span>
           </motion.div>
 
           <div className="flex items-center gap-4">
-            <ul className="hidden md:flex flex-row gap-8 text-lg list-none">
+            <ul className="hidden md:flex flex-row gap-8 text-sm list-none">
               {navItems.map((item) => (
                 <motion.li
                   key={item.id}
@@ -141,7 +143,7 @@ export function Navbar() {
                     >
                       <button
                         type="button"
-                        className={`w-full text-center py-4 px-6 rounded-xl font-medium text-lg transition-all duration-300 ${
+                        className={`w-full text-center py-4 px-6 rounded-xl font-medium text-base transition-all duration-300 ${
                           activeSection === item.id
                             ? 'text-purple-400 bg-purple-500/10 border border-purple-500/20'
                             : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
@@ -161,7 +163,7 @@ export function Navbar() {
                   transition={{ duration: 0.3, delay: 0.4 }}
                 >
                   <div className="flex justify-center">
-                    <LanguageToggle />
+                    <LanguageToggle textClassName="text-base" />
                   </div>
                 </motion.div>
               </motion.div>
