@@ -87,3 +87,7 @@ NEXT_PUBLIC_URL=        # Optional; deployed URL
 Skills live in `.agents/skills/<name>/SKILL.md`. Each skill is auto-triggered based on its `description` frontmatter.
 
 @.agents/skills/seo-audit/SKILL.md
+@.agents/skills/next-best-practices/SKILL.md
+@.agents/skills/vercel-react-best-practices/SKILL.md
+@.agents/skills/frontend-design/SKILL.md
+@.agents/skills/ui-ux-pro-max/SKILL.md

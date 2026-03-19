@@ -57,9 +57,9 @@ export function Contact() {
           <Title h2={t.contact.title} h3={t.contact.subtitle} />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-4xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-0 items-stretch max-w-4xl mx-auto">
           <motion.div
-            className="relative group h-full"
+            className="relative group flex-1"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -69,7 +69,15 @@ export function Contact() {
           </motion.div>
 
           <motion.div
-            className="h-full flex flex-col"
+            className="hidden lg:block w-px self-stretch mx-10 bg-gradient-to-b from-transparent via-white/10 to-transparent flex-shrink-0"
+            initial={{ opacity: 0, scaleY: 0 }}
+            whileInView={{ opacity: 1, scaleY: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          />
+
+          <motion.div
+            className="flex-1 flex flex-col"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}

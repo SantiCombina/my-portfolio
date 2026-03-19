@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 
+import { Title } from '@/components/ui';
 import { useLanguage } from '@/lib/contexts/language-context';
 
 export function About() {
@@ -18,15 +19,7 @@ export function About() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <p className="text-xs font-medium text-purple-400 tracking-wider uppercase">{t.about.overline}</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">{t.about.title}</h2>
-            <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
-              initial={{ width: 0, opacity: 0 }}
-              whileInView={{ width: 96, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              viewport={{ once: true }}
-            />
+            <Title h2={t.about.overline} h3={t.about.title} alignment="start" />
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">{t.about.description}</p>
           </motion.div>
 

@@ -5,12 +5,19 @@ import { motion } from 'motion/react';
 interface Props {
   h2: string;
   h3: string;
+  alignment?: 'start' | 'center' | 'end';
 }
 
-export function Title({ h2, h3 }: Props) {
+export function Title({ h2, h3, alignment = 'center' }: Props) {
+  const alignClass = {
+    start: 'items-start text-left',
+    center: 'items-center text-center',
+    end: 'items-end text-right',
+  }[alignment];
+
   return (
     <motion.div
-      className="flex flex-col items-center text-center"
+      className={`flex flex-col ${alignClass}`}
       initial={{ y: 30, opacity: 0 }}
       transition={{ duration: 0.8, type: 'spring', stiffness: 100 }}
       viewport={{ once: true, amount: 0.3 }}
