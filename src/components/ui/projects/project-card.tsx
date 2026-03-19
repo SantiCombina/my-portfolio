@@ -9,9 +9,10 @@ import { Media, Project } from '@/payload-types';
 
 interface ProjectCardProps {
   project: Project;
+  index?: number;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const { language } = useLanguage();
 
   const getLocalizedText = (prefix: 'name' | 'description') => {
@@ -47,6 +48,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <div className="relative aspect-video">
                   <Image
                     fill
+                    priority={index === 0}
                     alt={`${projectName} project screenshot`}
                     className="object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -47,15 +47,9 @@ export function Contact() {
   return (
     <section id="contact" className="relative py-20 overflow-hidden flex items-center justify-center">
       <div className="container relative z-10">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Title h2={t.contact.title} h3={t.contact.subtitle} />
-        </motion.div>
+        <div className="text-center mb-16">
+          <Title overline={t.contact.title} title={t.contact.subtitle} />
+        </div>
 
         <div className="flex flex-col lg:flex-row gap-0 items-stretch max-w-4xl mx-auto">
           <motion.div
@@ -107,9 +101,9 @@ export function Contact() {
                           <Icon className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="text-sm font-semibold text-gray-100 group-hover:text-purple-300 transition-colors">
+                          <p className="text-sm font-semibold text-gray-100 group-hover:text-purple-300 transition-colors">
                             {contact.label}
-                          </h4>
+                          </p>
                           <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
                             {contact.value}
                           </p>

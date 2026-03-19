@@ -29,8 +29,8 @@ export function EmailForm() {
       email: '',
       message: '',
     },
-    mode: 'all',
-    reValidateMode: 'onChange',
+    mode: 'onTouched',
+    reValidateMode: 'onBlur',
   });
 
   useEffect(() => {
@@ -72,7 +72,7 @@ export function EmailForm() {
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(onSubmit)}
-        className="relative bg-white/[0.03] backdrop-blur-xs border border-white/10 hover:border-pink-400/50 rounded-2xl space-y-2 p-5 transition-colors duration-300 h-full flex flex-col"
+        className="relative bg-white/[0.03] backdrop-blur-xs border border-white/10 hover:border-pink-400/50 rounded-2xl space-y-3 p-5 transition-colors duration-300 h-full flex flex-col"
       >
         <h3 className="text-base font-semibold mb-3 text-gray-100">{t.contact.form.title}</h3>
 

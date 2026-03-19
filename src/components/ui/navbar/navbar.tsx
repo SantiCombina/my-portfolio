@@ -2,7 +2,7 @@
 
 import { Twirl as Hamburger } from 'hamburger-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useMemo, useState, useEffect } from 'react';
 
 import { useLenis } from '@/components/lenis-provider';
 import { LanguageToggle } from '@/components/ui';
@@ -32,22 +32,32 @@ export function Navbar() {
     };
   }, [isMenuOpen, lenis]);
 
-  const scrollToSection = useCallback((sectionId: string) => {
-    if (typeof window === 'undefined') return;
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
-    }
-  }, []);
+  const scrollToSection = useCallback(
+    (sectionId: string) => {
+      if (typeof window === 'undefined') return;
+      const element = document.getElementById(sectionId);
+      if (element) {
+        if (lenis) {
+          lenis.scrollTo(element);
+        } else {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+        setIsMenuOpen(false);
+      }
+    },
+    [lenis],
+  );
 
-  const navItems = [
-    { id: 'home', label: t.navbar_sections.home },
-    { id: 'about', label: t.navbar_sections.about },
-    { id: 'projects', label: t.navbar_sections.work },
-    { id: 'skills', label: t.navbar_sections.skills },
-    { id: 'contact', label: t.navbar_sections.contact },
-  ];
+  const navItems = useMemo(
+    () => [
+      { id: 'home', label: t.navbar_sections.home },
+      { id: 'about', label: t.navbar_sections.about },
+      { id: 'projects', label: t.navbar_sections.work },
+      { id: 'skills', label: t.navbar_sections.skills },
+      { id: 'contact', label: t.navbar_sections.contact },
+    ],
+    [t],
+  );
 
   return (
     <>
@@ -121,11 +131,11 @@ export function Navbar() {
             <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMenuOpen(false)} />
 
             <motion.div
-              className="absolute top-16 left-0 right-0 h-full bg-[#050816]/80 backdrop-blur-xl border-b border-white/10"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: '100vh', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              className="absolute top-16 left-0 right-0 h-[100dvh] bg-[#050816]/80 backdrop-blur-xl border-b border-white/10"
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
             >
               <motion.div
                 className="container py-6 flex flex-col items-center justify-center min-h-[50dvh]"

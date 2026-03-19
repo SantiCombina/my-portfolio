@@ -19,7 +19,7 @@ export function About() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Title h2={t.about.overline} h3={t.about.title} alignment="start" />
+            <Title overline={t.about.overline} title={t.about.title} alignment="start" />
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">{t.about.description}</p>
           </motion.div>
 

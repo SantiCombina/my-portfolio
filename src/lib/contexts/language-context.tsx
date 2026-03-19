@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 
 import { translations, type Language } from '@/lib/translations';
 
@@ -12,30 +12,24 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
-  const [mounted, setMounted] = useState(false);
+export function LanguageProvider({ children, initialLang = 'en' }: { children: ReactNode; initialLang?: Language }) {
+  const [language, setLanguage] = useState<Language>(initialLang);
 
   useEffect(() => {
-    setMounted(true);
     if (typeof window !== 'undefined') {
-      const savedLanguage = localStorage.getItem('language') as Language;
-      if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'es')) {
+      const savedLanguage = localStorage.getItem('language');
+      if (savedLanguage === 'en' || savedLanguage === 'es') {
         setLanguage(savedLanguage);
-      } else {
-        const browserLanguage = navigator.language.toLowerCase();
-        const detectedLanguage = browserLanguage.startsWith('es') ? 'es' : 'en';
-        setLanguage(detectedLanguage);
       }
     }
   }, []);
 
   useEffect(() => {
-    if (mounted && typeof window !== 'undefined') {
+    if (typeof window !== 'undefined') {
       localStorage.setItem('language', language);
       document.cookie = `lang=${language};path=/;max-age=31536000;SameSite=Lax`;
     }
-  }, [language, mounted]);
+  }, [language]);
 
   const value = {
     language,

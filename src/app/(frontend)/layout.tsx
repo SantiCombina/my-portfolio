@@ -11,7 +11,7 @@ const SITE_URL = 'https://santicombina.vercel.app';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-montserrat',
   weight: ['300', '400', '500', '600', '700', '800', '900'],
 });
 
@@ -24,7 +24,7 @@ const playfair = Playfair_Display({
 export const metadata = {
   title: 'Santiago Combina - Full Stack Developer',
   description:
-    'Full Stack Developer specializing in React, Next.js, and modern web technologies. Explore my portfolio featuring innovative web applications and digital solutions.',
+    'Full Stack Developer from Argentina specializing in React, Next.js, and TypeScript. See projects built with attention to design and performance.',
   keywords: [
     'Santiago Combina',
     'Full Stack Developer',
@@ -50,7 +50,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Santiago Combina - Full Stack Developer',
-    description: 'Full Stack Developer specializing in React, Next.js, and modern web technologies.',
+    description: 'Full Stack Developer from Argentina specializing in React, Next.js, and TypeScript.',
     url: SITE_URL,
     siteName: 'Santiago Combina Portfolio',
     locale: 'en_US',
@@ -67,25 +67,55 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Santiago Combina - Full Stack Developer',
-    description: 'Full Stack Developer specializing in React, Next.js, and modern web technologies.',
+    description: 'Full Stack Developer from Argentina specializing in React, Next.js, and TypeScript.',
     images: ['/og-image.jpg'],
   },
 };
 
-const personSchema = {
+const schema = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Santiago Combina',
-  jobTitle: 'Full Stack Developer',
-  url: SITE_URL,
-  email: 'santicombina@gmail.com',
-  image: `${SITE_URL}/face.webp`,
-  sameAs: ['https://linkedin.com/in/santiago-combina', 'https://github.com/santicombina'],
-  knowsAbout: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Node.js', 'Web Development'],
-  address: {
-    '@type': 'PostalAddress',
-    addressCountry: 'AR',
-  },
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE_URL}/#person`,
+      name: 'Santiago Combina',
+      jobTitle: 'Full Stack Developer',
+      description: 'Full Stack Developer from Argentina specializing in React, Next.js, and TypeScript.',
+      url: SITE_URL,
+      email: 'santicombina@gmail.com',
+      image: `${SITE_URL}/face.jpg`,
+      nationality: 'Argentine',
+      knowsLanguage: ['Spanish', 'English'],
+      sameAs: ['https://linkedin.com/in/santiago-combina', 'https://github.com/santicombina'],
+      knowsAbout: [
+        'React',
+        'Next.js',
+        'TypeScript',
+        'JavaScript',
+        'Node.js',
+        'Web Development',
+        'Tailwind CSS',
+        'PostgreSQL',
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'AR',
+        addressLocality: 'Buenos Aires',
+      },
+      worksFor: {
+        '@type': 'Organization',
+        name: 'Forge',
+        url: 'https://www.forge.ar/',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      name: 'Santiago Combina - Full Stack Developer',
+      url: SITE_URL,
+      author: { '@id': `${SITE_URL}/#person` },
+    },
+  ],
 };
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
@@ -96,10 +126,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang={lang} className={`${montserrat.variable} ${playfair.variable}`}>
       <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </head>
-      <body className="font-inter antialiased">
-        <LanguageProvider>
+      <body className="font-montserrat antialiased">
+        <LanguageProvider initialLang={lang}>
           <LenisProvider>
             <main>{children}</main>
             <Toaster richColors position="top-center" duration={7000} />

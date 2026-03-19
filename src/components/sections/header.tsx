@@ -3,22 +3,16 @@
 import { ChevronDown, FileDown } from 'lucide-react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { useAction } from 'next-safe-action/hooks';
-import { useEffect } from 'react';
 
 import { useLanguage } from '@/lib/contexts/language-context';
 
-import { getUserAction } from './actions';
+interface HeaderProps {
+  cvUrls: { es: string | null; en: string | null };
+}
 
-export function Header() {
+export function Header({ cvUrls }: HeaderProps) {
   const { t, language } = useLanguage();
-  const { execute, result, isExecuting } = useAction(getUserAction);
-
-  useEffect(() => {
-    execute({ language });
-  }, [execute, language]);
-
-  const cvUrl = (result?.data?.success && result.data.data.cvUrl) || null;
+  const cvUrl = language === 'es' ? cvUrls.es : cvUrls.en;
 
   return (
     <header
@@ -44,6 +38,15 @@ export function Header() {
             </span>
           </motion.h1>
 
+          <motion.h2
+            className="text-sm font-medium tracking-widest uppercase text-purple-400/80"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.6 }}
+          >
+            {t.hero.role}
+          </motion.h2>
+
           <div className="flex flex-col items-center gap-4 px-4 sm:px-6">
             <motion.p
               className="text-[#DFD9FF] max-w-[550px] sm:text-[18px] xs:text-[16px] text-[14px] lg:leading-[28px] text-center text-wrap"
@@ -54,26 +57,21 @@ export function Header() {
               {t.hero.description}
             </motion.p>
 
-            {(cvUrl || isExecuting) && (
+            {cvUrl && (
               <motion.a
-                className={`group relative flex px-5 py-1.5 transition-all duration-300 rounded-xl shadow-lg ${
-                  isExecuting || !cvUrl
-                    ? 'bg-gray-600 cursor-not-allowed opacity-50'
-                    : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105 hover:shadow-purple-500/25'
-                } active:scale-100`}
-                href={isExecuting || !cvUrl ? undefined : cvUrl}
+                className="group relative flex px-5 py-1.5 transition-all duration-300 rounded-xl shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105 hover:shadow-purple-500/25 active:scale-100"
+                href={cvUrl}
                 rel="noopener noreferrer"
                 target="_blank"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                whileHover={isExecuting || !cvUrl ? {} : { scale: 1.05 }}
-                whileTap={isExecuting || !cvUrl ? {} : { scale: 0.95 }}
-                style={{ pointerEvents: isExecuting || !cvUrl ? 'none' : 'auto' }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <span className="flex items-center gap-2 text-sm font-semibold">
-                  {isExecuting ? 'Loading...' : t.hero.resume}
-                  <FileDown className={`w-4 h-4 ${isExecuting ? 'animate-spin' : 'group-hover:animate-bounce'}`} />
+                  {t.hero.resume}
+                  <FileDown className="w-4 h-4 group-hover:animate-bounce" />
                 </span>
               </motion.a>
             )}
@@ -92,7 +90,8 @@ export function Header() {
               alt="Santiago Combina - Full Stack Developer"
               className="rounded-full select-none w-60 h-60 md:h-80 md:w-80 shadow-2xl"
               height={320}
-              src="/face.webp"
+              sizes="(max-width: 768px) 240px, 320px"
+              src="/face.jpg"
               style={{ filter: 'drop-shadow(0px 0px 30px rgba(168, 85, 247, 0.4))' }}
               width={320}
             />

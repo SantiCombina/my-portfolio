@@ -17,15 +17,9 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
     return (
       <section id="projects" className="relative py-20 overflow-hidden flex items-center justify-center">
         <div className="container relative z-10">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <Title h2={t.projects.title} h3={t.projects.subtitle} />
-          </motion.div>
+          <div className="text-center mb-16">
+            <Title overline={t.projects.title} title={t.projects.subtitle} />
+          </div>
           <div className="text-center text-gray-400">
             <p>{t.projects.no_projects}</p>
           </div>
@@ -37,27 +31,21 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
   return (
     <section id="projects" className="relative py-20 overflow-hidden">
       <div className="container relative z-10">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Title h2={t.projects.title} h3={t.projects.subtitle} />
-        </motion.div>
+        <div className="text-center mb-12">
+          <Title overline={t.projects.title} title={t.projects.subtitle} />
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto place-items-start">
           {initialProjects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="w-full flex justify-center"
             >
-              <ProjectCard project={project} />
+              <ProjectCard project={project} index={index} />
             </motion.div>
           ))}
         </div>

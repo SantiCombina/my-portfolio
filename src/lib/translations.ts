@@ -10,6 +10,7 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
+      role: 'Full Stack Developer',
       description:
         'I build digital products that combine technical precision with a sharp eye for design — frontend-first, full-stack when it matters.',
       resume: 'Resume',
@@ -97,6 +98,7 @@ export const translations = {
     },
     hero: {
       greeting: 'Hola, soy',
+      role: 'Desarrollador Full Stack',
       description:
         'Construyo productos digitales que combinan precisión técnica con atención al diseño — frontend primero, full-stack cuando importa.',
       resume: 'Currículum',
