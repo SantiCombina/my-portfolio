@@ -39,15 +39,21 @@ export function useActiveSection(): UseActiveSection {
     // Ejecutar una vez al cargar para establecer el estado inicial
     handleScroll();
 
-    // Usar un throttle más directo y eficiente
     let isThrottled = false;
+    let trailingPending = false;
     const throttledHandleScroll = () => {
       if (!isThrottled) {
         handleScroll();
         isThrottled = true;
         setTimeout(() => {
           isThrottled = false;
-        }, 16); // ~60fps
+          if (trailingPending) {
+            trailingPending = false;
+            throttledHandleScroll();
+          }
+        }, 16);
+      } else {
+        trailingPending = true;
       }
     };
 

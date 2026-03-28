@@ -17,7 +17,7 @@ export function Header({ cvUrls }: HeaderProps) {
   return (
     <header
       id="home"
-      className="relative flex flex-col items-center justify-center w-full min-h-[100dvh] gap-2 py-20 lg:py-10 lg:gap-32 lg:flex-row overflow-hidden"
+      className="relative flex flex-col items-center justify-center w-full min-h-[100dvh] gap-2 pt-22 pb-20 lg:py-10 lg:gap-32 lg:flex-row overflow-hidden"
     >
       <div className="container relative z-10 flex flex-col lg:flex-row items-center justify-center gap-14 lg:gap-36">
         <motion.div
@@ -94,21 +94,23 @@ export function Header({ cvUrls }: HeaderProps) {
               className="rounded-2xl select-none w-72 md:w-[340px] h-auto ring-1 ring-white/10"
               style={{
                 boxShadow:
-                  '0 0 0 1px rgba(255,255,255,0.06), 0 25px 60px rgba(0,0,0,0.6), 0 0 40px rgba(139,92,246,0.15)',
+                  '0 0 0 1px rgba(255,255,255,0.06), 0 25px 60px rgba(0,0,0,0.5), 0 0 70px rgba(236,72,153,0.45)',
               }}
               height={800}
               src="/santiago.jpg"
               width={576}
             />
             <div className="absolute bottom-6 -left-6 bg-[#0d0d0d] border border-white/10 rounded-r-xl px-4 py-3 shadow-2xl">
-              <p className="text-[11px] font-light tracking-[0.3em] uppercase text-white/80 leading-none">Developer</p>
+              <p className="text-[11px] font-light tracking-[0.3em] uppercase text-white/80 leading-none">
+                {t.navbar_logo}
+              </p>
             </div>
           </motion.div>
         </motion.div>
       </div>
 
       <motion.div
-        className="absolute bottom-16 left-1/2 -translate-x-1/2 text-gray-500"
+        className="absolute bottom-6 sm:bottom-16 left-1/2 -translate-x-1/2 text-gray-500"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
