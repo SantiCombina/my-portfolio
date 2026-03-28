@@ -141,6 +141,24 @@
   ::-webkit-scrollbar {
     display: none;
   }
+
+  textarea::-webkit-scrollbar {
+    display: block;
+    width: 4px;
+  }
+
+  textarea::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  textarea::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+  }
+
+  textarea::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -181,7 +199,7 @@
 
 @utility container {
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: 2rem;
   max-width: var(--container-max-width);
 }
 

@@ -11,7 +11,7 @@ export function About() {
   return (
     <section id="about" className="relative py-20 overflow-hidden">
       <div className="container relative z-10">
-        <div className="flex flex-col md:flex-row items-end gap-0 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center gap-0 max-w-5xl mx-auto">
           <motion.div
             className="flex flex-col gap-4 flex-1 md:pr-16"
             initial={{ opacity: 0, x: -40 }}
@@ -20,7 +20,10 @@ export function About() {
             viewport={{ once: true }}
           >
             <Title overline={t.about.overline} title={t.about.title} alignment="start" />
-            <p className="text-gray-400 text-sm md:text-base leading-relaxed">{t.about.description}</p>
+            <div className="flex flex-col gap-4">
+              <p className="text-gray-400 text-sm md:text-base leading-relaxed">{t.about.description1}</p>
+              <p className="text-gray-400 text-sm md:text-base leading-relaxed">{t.about.description2}</p>
+            </div>
           </motion.div>
 
           <motion.div
@@ -39,12 +42,12 @@ export function About() {
             viewport={{ once: true }}
           >
             <div className="flex flex-col gap-0">
-              <div className="flex items-center gap-2">
-                <span className="w-4 h-px bg-[#b8a48a]" />
-                <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#b8a48a]">
-                  {t.about.forge.overline}
-                </p>
-              </div>
+              <p
+                className="text-[11px] italic text-[#b8a48a] mb-[-15px] ml-[34px]"
+                style={{ fontFamily: 'var(--font-playfair)' }}
+              >
+                {t.about.forge.overline}
+              </p>
               <p
                 className="font-bold tracking-tight text-5xl"
                 style={{ fontFamily: 'var(--font-playfair)', color: 'oklch(0.965 0.005 90)' }}
@@ -53,9 +56,8 @@ export function About() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 mt-4">
-              <p className="text-sm text-gray-400 leading-relaxed">{t.about.forge.description1}</p>
-              <p className="text-sm text-gray-400 leading-relaxed">{t.about.forge.description2}</p>
+            <div className="mt-4">
+              <p className="text-sm text-gray-400 leading-relaxed">{t.about.forge.description}</p>
             </div>
 
             <div className="flex items-center justify-end w-full gap-5">

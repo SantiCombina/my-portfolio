@@ -51,7 +51,7 @@ export function Contact() {
           <Title overline={t.contact.title} title={t.contact.subtitle} />
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-0 items-stretch max-w-4xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-0 items-stretch max-w-4xl mx-auto">
           <motion.div
             className="relative group flex-1"
             initial={{ opacity: 0, x: -50 }}
@@ -101,10 +101,10 @@ export function Contact() {
                           <Icon className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <p className="text-sm font-semibold text-gray-100 group-hover:text-purple-300 transition-colors">
+                          <p className="text-[11px] font-medium tracking-widest uppercase text-gray-500 group-hover:text-gray-400 transition-colors">
                             {contact.label}
                           </p>
-                          <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
+                          <p className="text-sm font-semibold text-gray-100 group-hover:text-purple-300 transition-colors">
                             {contact.value}
                           </p>
                         </div>

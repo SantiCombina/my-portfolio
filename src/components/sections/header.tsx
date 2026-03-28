@@ -17,39 +17,37 @@ export function Header({ cvUrls }: HeaderProps) {
   return (
     <header
       id="home"
-      className="relative flex flex-col-reverse items-center justify-center w-full min-h-[100dvh] gap-2 py-10 lg:gap-32 lg:flex-row overflow-hidden"
+      className="relative flex flex-col items-center justify-center w-full min-h-[100dvh] gap-2 py-20 lg:py-10 lg:gap-32 lg:flex-row overflow-hidden"
     >
-      <div className="container w-full px-4 sm:px-6 mx-auto flex flex-col-reverse lg:flex-row items-center justify-center gap-2 lg:gap-32">
+      <div className="container relative z-10 flex flex-col lg:flex-row items-center justify-center gap-14 lg:gap-36">
         <motion.div
           animate={{ opacity: 1, scale: 1 }}
-          className="relative z-10 flex flex-col gap-1 items-center justify-center mt-6"
+          className="relative z-10 flex flex-col gap-3 items-start justify-center"
           initial={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <motion.h1
-            className="font-bold lg:text-[56px] sm:text-[44px] xs:text-[36px] text-[28px] lg:leading-[68px] md:leading-[52px] text-center leading-[36px]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.6 }}
-          >
-            {t.hero.greeting}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] via-purple-400 to-pink-600 animate-gradient-x">
-              Santiago
-            </span>
-          </motion.h1>
-
-          <motion.h2
-            className="text-sm font-medium tracking-widest uppercase text-purple-400/80"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.6 }}
-          >
-            {t.hero.role}
-          </motion.h2>
-
-          <div className="flex flex-col items-center gap-4 px-4 sm:px-6">
+          <div className="flex flex-col gap-0 items-start">
             <motion.p
-              className="text-[#DFD9FF] max-w-[550px] sm:text-[18px] xs:text-[16px] text-[14px] lg:leading-[28px] text-center text-wrap"
+              className="font-bold text-[28px] sm:text-[36px] lg:text-[44px] leading-none text-purple-400"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+            >
+              {t.hero.greeting}
+            </motion.p>
+            <motion.h1
+              className="font-bold text-[52px] sm:text-[68px] lg:text-[84px] leading-none text-white -mt-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15, duration: 0.6 }}
+            >
+              Santiago.
+            </motion.h1>
+          </div>
+
+          <div className="flex flex-col items-start gap-5">
+            <motion.p
+              className="text-[#DFD9FF] max-w-[420px] text-[15px] sm:text-[17px] leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -84,17 +82,27 @@ export function Header({ cvUrls }: HeaderProps) {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, damping: 15, delay: 0.2 }}
         >
-          <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 4, ease: 'easeInOut', repeat: Infinity }}>
+          <motion.div
+            className="relative"
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 4, ease: 'easeInOut', repeat: Infinity }}
+          >
             <Image
+              unoptimized
               priority
-              alt="Santiago Combina - Full Stack Developer"
-              className="rounded-full select-none w-60 h-60 md:h-80 md:w-80 shadow-2xl"
-              height={320}
-              sizes="(max-width: 768px) 240px, 320px"
-              src="/face.jpg"
-              style={{ filter: 'drop-shadow(0px 0px 30px rgba(168, 85, 247, 0.4))' }}
-              width={320}
+              alt="Santiago Combina - Developer"
+              className="rounded-2xl select-none w-72 md:w-[340px] h-auto ring-1 ring-white/10"
+              style={{
+                boxShadow:
+                  '0 0 0 1px rgba(255,255,255,0.06), 0 25px 60px rgba(0,0,0,0.6), 0 0 40px rgba(139,92,246,0.15)',
+              }}
+              height={800}
+              src="/santiago.jpg"
+              width={576}
             />
+            <div className="absolute bottom-6 -left-6 bg-[#0d0d0d] border border-white/10 rounded-r-xl px-4 py-3 shadow-2xl">
+              <p className="text-[11px] font-light tracking-[0.3em] uppercase text-white/80 leading-none">Developer</p>
+            </div>
           </motion.div>
         </motion.div>
       </div>

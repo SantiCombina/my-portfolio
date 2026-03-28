@@ -81,7 +81,9 @@ export function EmailForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-gray-300">{t.contact.form.name}</FormLabel>
+              <FormLabel className="text-[11px] font-medium tracking-widest uppercase text-gray-500">
+                {t.contact.form.name}
+              </FormLabel>
               <FormControl>
                 <Input placeholder={t.contact.form.placeholder.name} {...field} />
               </FormControl>
@@ -96,7 +98,9 @@ export function EmailForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-gray-300">{t.contact.form.email}</FormLabel>
+              <FormLabel className="text-[11px] font-medium tracking-widest uppercase text-gray-500">
+                {t.contact.form.email}
+              </FormLabel>
               <FormControl>
                 <Input placeholder={t.contact.form.placeholder.email} type="email" {...field} />
               </FormControl>
@@ -111,9 +115,11 @@ export function EmailForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-gray-300">{t.contact.form.message}</FormLabel>
+              <FormLabel className="text-[11px] font-medium tracking-widest uppercase text-gray-500">
+                {t.contact.form.message}
+              </FormLabel>
               <FormControl>
-                <Textarea rows={5} placeholder={t.contact.form.placeholder.message} {...field} />
+                <Textarea rows={3} placeholder={t.contact.form.placeholder.message} {...field} />
               </FormControl>
               <div className="min-h-[1.25rem] -mt-1">
                 <FormMessage />

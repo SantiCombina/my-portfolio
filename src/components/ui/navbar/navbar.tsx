@@ -70,31 +70,22 @@ export function Navbar() {
         transition={{ duration: 0.3 }}
       >
         <div className="flex items-center justify-between gap-2 w-full container">
-          <motion.div
-            className="flex gap-1 text-base font-semibold items-center cursor-pointer group whitespace-nowrap"
+          <div
+            className="flex gap-1 text-base font-semibold items-center cursor-pointer whitespace-nowrap"
             onClick={() => scrollToSection('home')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
-            <span className="text-white group-hover:text-purple-300 transition-colors">
-              Santiago Combina
-              <span className="inline-block align-middle px-1 text-xs md:text-sm text-gray-400 group-hover:text-purple-400 whitespace-nowrap">
-                | {t.navbar_logo}
-              </span>
-            </span>
-          </motion.div>
+            <span className="text-white/90 hover:text-white transition-colors duration-300">Santiago Combina</span>
+          </div>
 
           <div className="flex items-center gap-4">
             <ul className="hidden md:flex flex-row gap-8 text-sm list-none">
               {navItems.map((item) => (
-                <motion.li
+                <li
                   key={item.id}
                   className={`relative cursor-pointer font-medium transition-colors duration-300 ${
-                    activeSection === item.id ? 'text-purple-400' : 'text-gray-300 hover:text-white'
+                    activeSection === item.id ? 'text-white' : 'text-white/70 hover:text-white'
                   }`}
                   onClick={() => scrollToSection(item.id)}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   {item.label}
                   {activeSection === item.id && (
@@ -104,7 +95,7 @@ export function Navbar() {
                       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     />
                   )}
-                </motion.li>
+                </li>
               ))}
             </ul>
 

@@ -12,33 +12,20 @@ export const translations = {
       greeting: "Hi, I'm",
       role: 'Full Stack Developer',
       description:
-        'I build digital products that combine technical precision with a sharp eye for design — frontend-first, full-stack when it matters.',
+        'I build software products that combine engineering technical rigor with attention to design and user experience.',
       resume: 'Resume',
     },
     about: {
       overline: 'About me',
       title: 'Built different',
-      description:
-        "I'm a software developer based in Argentina with a strong focus on frontend. I care about craft, execution, and shipping products that actually work. I've led projects end-to-end — from architecture decisions to client conversations — and I bring that same ownership mentality to every line of code I write.",
-      traits: [
-        {
-          title: 'Frontend-first',
-          description: 'I obsess over interfaces — performance, accessibility, and every pixel that matters.',
-        },
-        {
-          title: 'Execution',
-          description: 'From idea to shipped product. I own the full cycle and deliver.',
-        },
-        {
-          title: 'Product mindset',
-          description: 'I think about users and business goals, not just code.',
-        },
-      ],
+      description1:
+        "I'm a software developer based in Argentina with a strong focus on frontend. I care about craft, execution, and shipping products that actually work.",
+      description2:
+        "I've led projects end-to-end, from architecture decisions to client conversations, and I bring that same ownership mentality to every line of code I write.",
       forge: {
-        overline: 'Agency',
-        description1:
-          "I'm currently founding Forge, a software agency focused on crafting high-quality digital products with clarity, performance and long-term scalability.",
-        description2: 'The goal is simple: build software that feels intentional, strategic and built to last.',
+        overline: 'Software Studio',
+        description:
+          'I founded Forge, a boutique software studio of highly skilled developers building tailored products for businesses that want to grow, automate, sell and scale, with a strong focus on security, performance and design.',
       },
     },
     skills: {
@@ -100,34 +87,20 @@ export const translations = {
       greeting: 'Hola, soy',
       role: 'Desarrollador Full Stack',
       description:
-        'Construyo productos digitales que combinan precisión técnica con atención al diseño — frontend primero, full-stack cuando importa.',
+        'Construyo productos de software que combinan el rigor técnico de ingeniería con atención al diseño y experiencia del usuario.',
       resume: 'Currículum',
     },
     about: {
       overline: 'Sobre mí',
       title: 'Construido diferente',
-      description:
-        'Soy desarrollador de software radicado en Argentina con foco en frontend. Me importa el craft, la ejecución y entregar productos que realmente funcionen. He liderado proyectos de punta a punta — desde decisiones de arquitectura hasta conversaciones con clientes — y traigo esa misma mentalidad a cada línea de código que escribo.',
-      traits: [
-        {
-          title: 'Frontend primero',
-          description: 'Me obsesionan las interfaces — rendimiento, accesibilidad y cada píxel que importa.',
-        },
-        {
-          title: 'Ejecución',
-          description: 'De la idea al producto entregado. Me hago cargo del ciclo completo.',
-        },
-        {
-          title: 'Mentalidad de producto',
-          description: 'Pienso en usuarios y objetivos de negocio, no solo en código.',
-        },
-      ],
+      description1:
+        'Soy desarrollador de software radicado en Argentina con foco en frontend. Me importa hacer las cosas bien, la ejecución y entregar productos que realmente funcionen.',
+      description2:
+        'He liderado proyectos de punta a punta, desde decisiones de arquitectura hasta conversaciones con clientes, y traigo esa misma mentalidad a cada línea de código que escribo.',
       forge: {
-        overline: 'Agencia',
-        description1:
-          'Actualmente estoy fundando Forge, una agencia de software enfocada en crear productos digitales de alta calidad con claridad, performance y escalabilidad a largo plazo.',
-        description2:
-          'El objetivo es simple: construir software que se sienta intencional, estratégico y hecho para durar.',
+        overline: 'Software Studio',
+        description:
+          'Fundé Forge, un estudio de software boutique compuesto por profesionales altamente cualificados que construyen productos digitales a medida para negocios que quieren crecer, automatizar, vender y escalar, con foco en seguridad, rendimiento y diseño.',
       },
     },
     skills: {
