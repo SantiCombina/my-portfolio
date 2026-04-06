@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 
 import { useLanguage } from '@/lib/contexts/language-context';
-import { Media, Project } from '@/payload-types';
+import { Media, Project } from '@/types/payload-types';
 
 interface ProjectCardProps {
   project: Project;

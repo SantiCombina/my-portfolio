@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-import { Media, Skill } from '@/payload-types';
+import { Media, Skill } from '@/types/payload-types';
 
 interface SkillCardProps {
   skill: Skill;

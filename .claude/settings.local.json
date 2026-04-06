@@ -9,7 +9,11 @@
       "Bash(node -e \"console.log\\(require\\(''lucide-react/package.json''\\).version\\)\")",
       "Bash(pnpm remove:*)",
       "Bash(pnpm lint:*)",
-      "Bash(pnpm lint:fix)"
+      "Bash(pnpm lint:fix)",
+      "Bash(rm -rf \"C:/Users/santi/.claude/skills/ui-ux-pro-max\")",
+      "Bash(rm -rf \"C:/Users/santi/.agents/skills/ui-ux-pro-max\")",
+      "Bash(du -sh C:/Users/santi/.claude/skills/*/)",
+      "Bash(du -sh C:/Users/santi/.agents/skills/*/)"
     ]
   }
 }

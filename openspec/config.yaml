@@ -1,0 +1,57 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Next.js 15 App Router, TypeScript, Payload CMS 3, PostgreSQL (NeonTech), Uploadthing
+  Architecture: Route groups (frontend) + (payload); Services → Server Actions → Client Components
+  Testing: No test runner detected
+  Style: ESLint + Prettier, Tailwind CSS v4
+
+strict_tdd: false
+
+testing:
+  strict_tdd: false
+  detected: "2026-04-06"
+  test_runner:
+    available: false
+    command: null
+    framework: null
+  layers:
+    unit: false
+    integration: false
+    e2e: false
+  coverage:
+    available: false
+    command: null
+  quality_tools:
+    linter:
+      available: true
+      command: "pnpm lint"
+    type_checker:
+      available: true
+      command: "tsc --noEmit"
+    formatter:
+      available: true
+      command: "prettier"
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Identify affected modules/packages
+  specs:
+    - Use Given/When/Then format for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include sequence diagrams for complex flows
+    - Document architecture decisions with rationale
+  tasks:
+    - Group tasks by phase (infrastructure, implementation, testing)
+    - Use hierarchical numbering (1.1, 1.2, etc.)
+    - Keep tasks small enough to complete in one session
+  apply:
+    - Follow existing code patterns and conventions
+    - Load relevant coding skills for the project stack
+  verify:
+    - Run pnpm lint and tsc --noEmit after changes
+    - Compare implementation against every spec scenario
+  archive:
+    - Warn before merging destructive deltas (large removals)

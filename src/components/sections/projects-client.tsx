@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 import { ProjectCard, Title } from '@/components/ui';
 import { useLanguage } from '@/lib/contexts/language-context';
-import { Project } from '@/payload-types';
+import { Project } from '@/types/payload-types';
 
 interface ProjectsClientProps {
   initialProjects: Project[];

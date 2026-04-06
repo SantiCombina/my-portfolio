@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 import { SkillCard, Title } from '@/components/ui';
 import { useLanguage } from '@/lib/contexts/language-context';
-import { Skill } from '@/payload-types';
+import { Skill } from '@/types/payload-types';
 
 interface SkillsClientProps {
   initialSkills: Skill[];
