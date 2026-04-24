@@ -72,23 +72,23 @@ export function EmailForm() {
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(onSubmit)}
-        className="relative bg-white/[0.03] backdrop-blur-xs border border-white/10 hover:border-pink-400/50 rounded-2xl space-y-3 p-5 transition-colors duration-300 h-full flex flex-col"
+        className="relative bg-white/[0.03] backdrop-blur-xs border border-white/10 hover:border-pink-400/50 rounded-3xl space-y-2 p-5 transition-colors duration-300 h-full flex flex-col"
       >
-        <h3 className="text-base font-semibold mb-3 text-gray-100">{t.contact.form.title}</h3>
+        <h3 className="text-base font-semibold mb-1 text-gray-100">{t.contact.form.title}</h3>
 
         <FormField
           control={methods.control}
           name="name"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="gap-1">
               <FormLabel className="text-[11px] font-medium tracking-widest uppercase text-gray-500">
                 {t.contact.form.name}
               </FormLabel>
               <FormControl>
                 <Input placeholder={t.contact.form.placeholder.name} {...field} />
               </FormControl>
-              <div className="min-h-[1.25rem] -mt-1">
-                <FormMessage />
+              <div className="min-h-[1rem]">
+                <FormMessage className="text-[11px]" />
               </div>
             </FormItem>
           )}
@@ -97,15 +97,15 @@ export function EmailForm() {
           control={methods.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="gap-1">
               <FormLabel className="text-[11px] font-medium tracking-widest uppercase text-gray-500">
                 {t.contact.form.email}
               </FormLabel>
               <FormControl>
                 <Input placeholder={t.contact.form.placeholder.email} type="email" {...field} />
               </FormControl>
-              <div className="min-h-[1.25rem] -mt-1">
-                <FormMessage />
+              <div className="min-h-[1rem]">
+                <FormMessage className="text-[11px]" />
               </div>
             </FormItem>
           )}
@@ -114,15 +114,15 @@ export function EmailForm() {
           control={methods.control}
           name="message"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="gap-1">
               <FormLabel className="text-[11px] font-medium tracking-widest uppercase text-gray-500">
                 {t.contact.form.message}
               </FormLabel>
               <FormControl>
                 <Textarea rows={3} placeholder={t.contact.form.placeholder.message} {...field} />
               </FormControl>
-              <div className="min-h-[1.25rem] -mt-1">
-                <FormMessage />
+              <div className="min-h-[1rem]">
+                <FormMessage className="text-[11px]" />
               </div>
             </FormItem>
           )}
@@ -131,7 +131,6 @@ export function EmailForm() {
           type="submit"
           disabled={isSubmitting}
           className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 disabled:opacity-50"
-          size="sm"
         >
           {isSubmitting ? (
             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

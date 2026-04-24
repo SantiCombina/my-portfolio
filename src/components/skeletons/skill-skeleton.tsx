@@ -2,8 +2,8 @@ import { Skeleton } from '@/components/ui';
 
 export function SkillSkeleton() {
   return (
-    <div className="flex flex-col items-center gap-3 p-5 rounded-2xl bg-white/[0.04] border border-white/[0.07] w-28">
-      <Skeleton className="w-8 h-8 rounded-lg bg-white/[0.08]" />
+    <div className="flex flex-col items-center gap-3 p-5 rounded-3xl bg-white/[0.04] border border-white/[0.07] w-28">
+      <Skeleton className="w-8 h-8 rounded-2xl bg-white/[0.08]" />
       <Skeleton className="h-3 w-14 bg-white/[0.08]" />
     </div>
   );

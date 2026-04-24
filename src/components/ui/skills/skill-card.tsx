@@ -19,11 +19,11 @@ export function SkillCard({ skill }: SkillCardProps) {
   const imageUrl = getImageUrl();
 
   return (
-    <div className="group relative flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/[0.03] backdrop-blur-xs border border-white/10 hover:border-purple-500/50 transition-all duration-500">
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-pink-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+    <div className="group relative flex flex-col items-center gap-2 p-3 rounded-3xl bg-white/[0.03] backdrop-blur-xs border border-white/10 hover:border-purple-500/50 transition-all duration-500">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-pink-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
 
       <div className="relative">
-        <div className="relative p-2 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl border border-gray-600/30 group-hover:border-purple-500/50 transition-all duration-500">
+        <div className="relative p-2 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-600/30 group-hover:border-purple-500/50 transition-all duration-500">
           {imageUrl && (
             <Image
               unoptimized
@@ -35,7 +35,7 @@ export function SkillCard({ skill }: SkillCardProps) {
             />
           )}
 
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
 
         <div className="absolute top-0 right-0 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-500" />

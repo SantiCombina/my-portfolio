@@ -93,11 +93,11 @@ export function Contact() {
                     viewport={{ once: true }}
                   >
                     <div
-                      className={`absolute inset-0 bg-gradient-to-r ${contact.color} opacity-0 group-hover:opacity-20 rounded-xl blur-lg transition-all duration-500`}
+                      className={`absolute inset-0 bg-gradient-to-r ${contact.color} opacity-0 group-hover:opacity-20 rounded-3xl blur-lg transition-all duration-500`}
                     />
-                    <div className="relative bg-white/[0.03] backdrop-blur-xs border border-white/10 rounded-xl p-4 group-hover:border-purple-500/50 transition-all duration-500 h-full flex items-center">
+                    <div className="relative bg-white/[0.03] backdrop-blur-xs border border-white/10 rounded-3xl p-4 group-hover:border-purple-500/50 transition-all duration-500 h-full flex items-center">
                       <div className="flex items-center gap-3 w-full">
-                        <div className={`p-2 rounded-lg bg-gradient-to-r ${contact.color}`}>
+                        <div className={`p-2 rounded-2xl bg-gradient-to-r ${contact.color}`}>
                           <Icon className="w-4 h-4 text-white" />
                         </div>
                         <div>

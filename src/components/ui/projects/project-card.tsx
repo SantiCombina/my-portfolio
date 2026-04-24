@@ -32,7 +32,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const imageUrl = getImageUrl();
 
   return (
-    <article className="group relative rounded-2xl w-full overflow-hidden bg-white/[0.03] backdrop-blur-xs border border-white/10 hover:border-purple-500/50 transition-all duration-500">
+    <article className="group relative rounded-3xl w-full overflow-hidden bg-white/[0.03] backdrop-blur-xs border border-white/10 hover:border-purple-500/50 transition-all duration-500">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-pink-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative flex flex-col">
         {project.deploy ? (

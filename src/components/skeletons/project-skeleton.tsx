@@ -3,8 +3,8 @@ import { Skeleton } from '@/components/ui';
 export function ProjectSkeleton() {
   return (
     <div className="relative group">
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl blur-lg opacity-0" />
-      <div className="relative bg-gray-900/40 backdrop-blur-xl border border-gray-700/50 rounded-xl overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-lg opacity-0" />
+      <div className="relative bg-gray-900/40 backdrop-blur-xl border border-gray-700/50 rounded-3xl overflow-hidden">
         <Skeleton className="w-full h-48 bg-gray-800/50" />
         <div className="p-6 space-y-4">
           <div className="space-y-2">

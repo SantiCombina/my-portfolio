@@ -24,7 +24,7 @@ export function LanguageToggle({ textClassName = 'text-sm' }: LanguageToggleProp
   if (!mounted) {
     return (
       <button
-        className="flex items-center gap-1 px-2 py-1 cursor-pointer text-white/70 hover:text-white font-medium transition-colors duration-300 rounded-md hover:bg-white/5"
+        className="flex items-center gap-1 px-2 py-1 cursor-pointer text-white/70 hover:text-white font-medium transition-colors duration-300 rounded-full hover:bg-white/5"
         type="button"
       >
         <Languages size={18} />
@@ -35,7 +35,7 @@ export function LanguageToggle({ textClassName = 'text-sm' }: LanguageToggleProp
 
   return (
     <button
-      className="flex items-center gap-1 px-2 py-1 cursor-pointer text-white/70 hover:text-white font-medium transition-colors duration-300 rounded-md hover:bg-white/5"
+      className="flex items-center gap-1 px-2 py-1 cursor-pointer text-white/70 hover:text-white font-medium transition-colors duration-300 rounded-full hover:bg-white/5"
       onClick={toggleLanguage}
       type="button"
     >

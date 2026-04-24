@@ -145,7 +145,7 @@ export function Navbar() {
                     >
                       <button
                         type="button"
-                        className={`w-full text-center py-4 px-6 rounded-xl font-medium text-base transition-all duration-300 ${
+                        className={`w-full text-center py-4 px-6 rounded-2xl font-medium text-base transition-all duration-300 ${
                           activeSection === item.id
                             ? 'text-purple-400 bg-purple-500/10 border border-purple-500/20'
                             : 'text-gray-300 hover:text-white hover:bg-gray-800/50'

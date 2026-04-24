@@ -57,7 +57,7 @@ export function Header({ cvUrls }: HeaderProps) {
 
             {cvUrl && (
               <motion.a
-                className="group relative flex px-5 py-1.5 transition-all duration-300 rounded-xl shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105 hover:shadow-purple-500/25 active:scale-100"
+                className="group relative flex px-8 py-2.5 transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105 hover:shadow-purple-500/25 active:scale-100"
                 href={cvUrl}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -91,7 +91,7 @@ export function Header({ cvUrls }: HeaderProps) {
               unoptimized
               priority
               alt="Santiago Combina - Developer"
-              className="rounded-2xl select-none w-72 md:w-[340px] h-auto ring-1 ring-white/10"
+              className="rounded-3xl select-none w-72 md:w-[340px] h-auto ring-1 ring-white/10"
               style={{
                 boxShadow:
                   '0 0 0 1px rgba(255,255,255,0.06), 0 25px 60px rgba(0,0,0,0.5), 0 0 70px rgba(236,72,153,0.45)',
@@ -100,7 +100,7 @@ export function Header({ cvUrls }: HeaderProps) {
               src="/santiago.jpg"
               width={576}
             />
-            <div className="absolute bottom-6 -left-6 bg-[#0d0d0d] border border-white/10 rounded-r-xl px-4 py-3 shadow-2xl">
+            <div className="absolute bottom-6 -left-6 bg-[#0d0d0d] border border-white/10 rounded-r-2xl px-4 py-3 shadow-2xl">
               <p className="text-[11px] font-light tracking-[0.3em] uppercase text-white/80 leading-none">
                 {t.navbar_logo}
               </p>
